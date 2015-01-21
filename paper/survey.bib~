@@ -40,3 +40,34 @@ url = {http://arxiv.org/abs/1404.5997},
 year = {2014}
 }
 
+@article{Yadan2013,
+abstract = {In this work we evaluate different approaches to parallelize computation of convolutional neural networks across several GPUs within the same server.},
+archivePrefix = {arXiv},
+arxivId = {arXiv:1312.5853v4},
+author = {Yadan, O and Adams, Keith},
+eprint = {arXiv:1312.5853v4},
+file = {:home/mahesh/paper/survey/ref/1312.5853v4.pdf:pdf},
+journal = {arXiv},
+mendeley-groups = {survey\_icip2015},
+pages = {10--13},
+title = {{Multi-GPU Training of ConvNets}},
+url = {http://www.nvidia.com/content/tesla/pdf/machine-learning/multi-gpu-training-convnets.pdf},
+year = {2013}
+}
+
+@article{Krizhevsky2014,
+abstract = {I present a new way to parallelize the training of convolutional neural networks across multiple GPUs. The method scales signiﬁcantly better than all alternatives when applied to modern convolutional neural networks.},
+archivePrefix = {arXiv},
+arxivId = {arXiv:1404.5997v2},
+author = {Krizhevsky, Alex},
+eprint = {arXiv:1404.5997v2},
+file = {:home/mahesh/paper/survey/ref/1404.5997v2.pdf:pdf},
+mendeley-groups = {survey\_icip2015},
+pages = {1--7},
+title = {{One weird trick for parallelizing convolutional neural networks}},
+url = {http://arxiv.org/abs/1404.5997},
+year = {2014}
+}
+
+
+
