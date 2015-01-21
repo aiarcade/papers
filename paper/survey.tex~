@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath,graphicx}
+
+\begin{document}
+\begin{section}{Deep Image: Scaling up Image Recognition}
+The latest attempt in image classification with an error 5.98\% in ImageNet data set is reported by  Ren Wu et al.\cite{Wu2015} of Baidu research.They developed an end to end deep learning  system named Deep Image. It uses a highly optimized parallel algorithm  to implement large deep neural network with augmented input data. The network is trained using stochastic gradient decent algorithms (SGD)[ref] on a custom built high performance system comprised of 36 server nodes, each with 2 six-core Intel Xeon E5-2620 processors and 4 Nvidia Tesla K40m GPUs . System  uses an InfiniBand  network for interconnections. Parallelism strategies used in their network are model-data parallelism and data parallelism.  This methods have been proposed by Alex Krizhevsky \cite{Krizhevsky2014} and Omry Yadan et al.\cite{Yadan2013} for training convolutional neural networks with SGD on a  multiple GPU systems. But it is not easy extend the same strategies to multiple GPU cluster because of the communication overhead. So the  Baidu Team focused on minimizing network data transfers and overlapping the computation. They uses butterfly synchronization and lazy update strategies to achieve data parallelism in gradient computation. Their results shows model-data parallelism is better when number of GPUs is less than 16. Implementation of Data parallelism in large number  of GPU  cluster is better because of the constant communication requirements.
+\par
+The authors have explored different data augmentation techniques to increase the number of labeled images in the training set. This includes color casting, Vignetting , Lens distortion , Rotation , Flipping and  Cropping. Instead of using the same resolution on all images, they have trained separate models at different scales, combined results by averaging softmax class posteriors.
+Data set used in this experiment was subset of ImageNet data set , used in the competition ImageNet Large-Scale Visual Recognition Challenge (ILSVRC). This data set includes 1.2 million images which contains 1,000 categories.
+
+ 
+\end{section}
+
+
+\section{REFERENCES}
+\label{sec:survey}
+\bibliographystyle{IEEEbib}
+\bibliography{survey}
+
+\end{document}

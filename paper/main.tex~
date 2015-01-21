@@ -12,7 +12,7 @@
 
 % Title.
 % ------
-\title{Learning methods for image classification - A Survey  }
+\title{Machine learning techiniques for image classification - A Survey  }
 %
 % Single address.
 % ---------------
@@ -146,16 +146,23 @@ proceedings.
 \section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
 \label{sec:illust}
 
-Illustrations must appear within the designated margins. They may span the two
-columns. If possible, position illustrations at the top of columns, rather
-than in the middle or at the bottom.  Caption and number every illustration.
-All halftone illustrations must be clear black and white prints. Colors may be
-used, but they should be selected so as to be readable when printed on a
-black-only printer.
+The latest attempt in image classification with an error 5.98% in ImageNet data
+set is reported by Ren Wu et al.[1] of Baidu research.They developed an end to
+end deep learning system named Deep Image. It uses a highly optimized parallel
+algorithm to implement large deep neural network with augmented input data.
+The network is trained using stochastic gradient decent algorithms (SGD)[ref]
+on a custom built high performance system comprised of 36 server nodes, each
+with 2 six-core Intel Xeon E5-2620 processors and 4 Nvidia Tesla K40m GPUs .
+System uses an InfiniBand network for interconnections. Parallelism strategies
+used in their network are model-data parallelism and data parallelism. This
+methods have been proposed by Alex Krizhevsky [2] and Omry Yadan et al.[3]
+for training convolutional neural networks with SGD on a multiple GPU sys-
+tems. But it is not easy extend the same strategies to multiple GPU cluster
+because of the communication overhead. So the Baidu Team focused on min-
+imizing network data transfers and overlapping the computation. They uses
+butterfly synchronization and lazy update strategies to achieve data parallelism
+in gradient computation. The first one focuses on partitioning gradients and
 
-Since there are many ways, often incompatible, of including images (e.g., with
-experimental results) in a LaTeX document, below is an example of how to do
-this \cite{Lamp86}.
 
 \section{FOOTNOTES}
 \label{sec:foot}

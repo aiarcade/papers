@@ -1,0 +1,10 @@
+\documentclass{article}
+\usepackage{amsmath,graphicx}
+
+\begin{document}
+\begin{section}{Deep Image: Scaling up Image Recognition}
+The latest attempt in image classification with an error 5.98\% in ImageNet data set is reported by  Ren Wu et al.[ref] of Baidu research.
+They developed an end to end deep learning  system named Deep Image. It uses a highly optimized parallel algorithm  to implement large deep neural network with augmented input data. The network is trained using stochastic gradient decent algorithms (SGD)[ref]. Parallelism strategies used in their network is 
+\end{section}
+
+\end{document}
