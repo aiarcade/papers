@@ -1,22 +1,3 @@
-@InProceedings{C2,
-  author = 	 "Jones, C.D. and Smith, A.B. and Roberts, E.F.",
-  title =        "Article Title",
-  booktitle =        "Proceedings Title",
-  organization = "IEEE",
-  year = 	 "2003",
-  volume = 	 "II",
-  pages = 	 "803-806"
-}
-
-@Article{Lamp86,
-  author =       "A.B. Smith and C.D. Jones and E.F. Roberts",
-  title =        "Article Title",
-  journal = 	 "Journal",
-  year = 	 "1920",
-  volume = 	 "62",
-  pages = 	 "291-294",
-  month = 	 "January"
-}
 @article{Wu2015,
 author = {Wu, Ren and Yan, Shengen and Shan, Yi and Dang, Qingqing and Sun, Gang},
 file = {:home/mahesh/paper/survey/ref/1501.02876v1.pdf:pdf},
@@ -67,6 +48,30 @@ pages = {1--7},
 title = {{One weird trick for parallelizing convolutional neural networks}},
 url = {http://arxiv.org/abs/1404.5997},
 year = {2014}
+}
+@article{Berg2010,
+archivePrefix = {arXiv},
+arxivId = {arXiv:1409.0575v2},
+author = {Berg, Alex and Deng, J},
+eprint = {arXiv:1409.0575v2},
+file = {:home/mahesh/paper/survey/ref/1409.0575v2.pdf:pdf},
+journal = {Challenge},
+keywords = {benchmark,dataset,large-scale,object detection,object recognition},
+mendeley-groups = {survey\_icip2015},
+title = {{Imagenet large scale visual recognition challenge 2010}},
+url = {http://scholar.google.com/scholar?hl=en\&btnG=Search\&q=intitle:Large+Scale+Visual+Recognition+Challenge+2010\#2},
+year = {2010}
+}
+@article{Arge2015,
+archivePrefix = {arXiv},
+arxivId = {arXiv:1409.1556v5},
+author = {Karen Simonyan & Andrew Zisserman},
+eprint = {arXiv:1409.1556v5},
+file = {:data/dev/object\_classifiers/ref/6.pdf:pdf},
+mendeley-groups = {survey\_icip2015},
+pages = {1--13},
+title = {{V d c n l -s i r}},
+year = {2015}
 }
 
 

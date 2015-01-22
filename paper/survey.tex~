@@ -12,6 +12,7 @@ Data set used in this experiment was subset of ImageNet data set , used in the c
 It also shows , augmented multi-scale images can be combined to achieve less error rate in convolutional network in the context of the image classification . 
  \end{section}
 \section{VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION}
+Karen Simonyan and Andrew Zisserman \cite{Arge2015} evaluated the effect of network depth in image classification using very small convolution filters. 
 
 
 \section{REFERENCES}
