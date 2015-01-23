@@ -134,6 +134,68 @@ pages = {1--12},
 title = {{Going deeper with convolutions}}
 }
 
+@article{Zeiler2013,
+abstract = {Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky $\backslash$etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.},
+archivePrefix = {arXiv},
+arxivId = {1311.2901},
+author = {Zeiler, Matthew D and Fergus, Rob},
+eprint = {1311.2901},
+file = {:data/dev/object\_classifiers/ref/zeilerECCV2014.pdf:pdf},
+journal = {arXiv preprint arXiv:1311.2901},
+mendeley-groups = {survey\_icip2015/2013},
+pages = {818--833},
+title = {{Visualizing and Understanding Convolutional Networks}},
+url = {http://arxiv.org/abs/1311.2901},
+year = {2013}
+}
+
+@article{Krizhevsky2012a,
+abstract = {We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSRVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5\% and 17.0\% which is considerably better than the previous state of the art. The neural network, which has 60 million paramters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolutional operation. To reduce overfitting in the fully-connected layers, we employed a recently-developed method called 'dropout' that proved to be effective. We also entered a variant of the model in the ILSVRC-2012 competition and achievd a top-5 test error rate of 15.3\%, compared to 26.2\% achieved by the second-best entry.},
+archivePrefix = {arXiv},
+arxivId = {1102.0183},
+author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+eprint = {1102.0183},
+file = {:data/dev/object\_classifiers/ref/7.pdf:pdf},
+isbn = {9781627480031},
+issn = {10495258},
+journal = {Advances In Neural Information Processing Systems},
+mendeley-groups = {survey\_icip2015,survey\_icip2015/2012},
+pages = {1--9},
+title = {{ImageNet Classification with Deep Convolutional Neural Networks}},
+year = {2012}
+}
+
+
+@article{Sermanet2013,
+abstract = {We present an integrated framework for using ConvolutionalNetworks for classi- fication, localization and detection.We showhowamultiscale and slidingwindow approach can be efficiently implemented within a ConvNet. We also introduce a novel deep learning approach to localization by learning to predict object bound- aries. Bounding boxes are then accumulated rather than suppressed in order to increase detection confidence. We show that different tasks can be learned simul- taneously using a single shared network. This integrated framework is the winner of the localization task of the ImageNetLarge ScaleVisual RecognitionChallenge 2013 (ILSVRC2013) and obtained very competitive results for the detection and classifications tasks. In post-competitionwork, we establish a new state of the art for the detection task. Finally, we release a feature extractor from our best model called OverFeat.},
+archivePrefix = {arXiv},
+arxivId = {1312.6229},
+author = {Sermanet, Pierre and Eigen, David and Zhang, Xiang and Mathieu, Michael and Fergus, Rob and LeCun, Yann},
+eprint = {1312.6229},
+file = {:home/mahesh/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Sermanet et al. - 2013 - OverFeat Integrated Recognition , Localization and Detection using Convolutional Networks.pdf:pdf},
+journal = {arXiv preprint arXiv:1312.6229},
+mendeley-groups = {survey\_icip2015},
+pages = {1--15},
+title = {{OverFeat : Integrated Recognition , Localization and Detection using Convolutional Networks}},
+url = {http://arxiv.org/abs/1312.6229},
+year = {2013}
+}
+@article{He2014,
+abstract = {Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g. 224x224) input image. This requirement is "artificial" and may hurt the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with a more principled pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. By removing the fixed-size limitation, we can improve all CNN-based image classification methods in general. Our SPP-net achieves state-of-the-art accuracy on the datasets of ImageNet 2012, Pascal VOC 2007, and Caltech101. The power of SPP-net is more significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method computes convolutional features 30-170x faster than the recent leading method R-CNN (and 24-64x faster overall), while achieving better or comparable accuracy on Pascal VOC 2007.},
+archivePrefix = {arXiv},
+arxivId = {1406.4729},
+author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+doi = {10.1109/TPAMI.2015.2389824},
+eprint = {1406.4729},
+file = {:data/dev/object\_classifiers/ref/1406.4729v3.pdf:pdf},
+journal = {arXiv preprint arXiv \ldots},
+mendeley-groups = {survey\_icip2015,survey\_icip2015/2014},
+pages = {1--14},
+title = {{Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition}},
+url = {http://arxiv.org/abs/1406.4729v1$\backslash$npapers3://publication/uuid/09415D06-A785-4329-82C0-B9FF2B1FEAB7},
+volume = {cs.CV},
+year = {2014}
+}
 
 
 
