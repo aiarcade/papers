@@ -266,6 +266,51 @@ url = {http://arxiv.org/abs/1302.4389},
 year = {2013}
 }
 
+@article{Lin2013,
+abstract = {We propose a novel deep network structure called "Network In Network" (NIN) to enhance model discriminability for local patches within the receptive field. The conventional convolutional layer uses linear filters followed by a nonlinear activation function to scan the input. Instead, we build micro neural networks with more complex structures to abstract the data within the receptive field. We instantiate the micro neural network with a multilayer perceptron, which is a potent function approximator. The feature maps are obtained by sliding the micro networks over the input in a similar manner as CNN; they are then fed into the next layer. Deep NIN can be implemented by stacking mutiple of the above described structure. With enhanced local modeling via the micro network, we are able to utilize global average pooling over feature maps in the classification layer, which is easier to interpret and less prone to overfitting than traditional fully connected layers. We demonstrated the state-of-the-art classification performances with NIN on CIFAR-10 and CIFAR-100, and reasonable performances on SVHN and MNIST datasets.},
+archivePrefix = {arXiv},
+arxivId = {1312.4400},
+author = {Lin, Min and Chen, Qiang and Yan, Shuicheng},
+eprint = {1312.4400},
+file = {:data/dev/object\_classifiers/ref/3.pdf:pdf},
+journal = {arXiv preprint},
+mendeley-groups = {survey\_icip2015,survey\_icip2015/2013},
+pages = {10},
+title = {{Network In Network}},
+url = {http://arxiv.org/abs/1312.4400},
+year = {2013}
+}
+@article{Hubel1962,
+author = {{Hubel DH}, Wiesel TN},
+file = {:data/dev/object\_classifiers/ref/jphysiol01247-0121.pdf:pdf},
+journal = {The Journal of Physiology},
+mendeley-groups = {survey\_icip2015/introduction},
+number = {1},
+pages = {106--154},
+title = {{Receptive fields, binocular interaction and functional architecture in the cat’s visual cortex}},
+volume = {160},
+year = {1962}
+}
+
+
+@article{Hubel1965a,
+abstract = {Electrophysiological recordings were obtained from cells in areas 17, 18 and 19 of the cat visual cortex. Light stimuli were presented to the intact eyes. Cells were characterized as complex and hypercomplex, depending on whether they responded best to single lines or edges extending over their whole receptive field, or whether the feature proved to be effective in activating the cell when in only a portion of the field. Hypercomplex cells predominated in area 19. Many interesting observations about cell responses are reported in this paper, including findings about the columnar arrangement of cells, binocular driving of cells, and size and location of their receptive fields. Histological and physiological studies agree on the delineation of the borders between areas 17 and 18, and areas 18 and 19. Silver-degeneration experiments show that cells in area 17 project to areas 18 and 19 bilaterally},
+author = {Hubel, D H and Wiesel, T N},
+file = {:data/dev/object\_classifiers/ref/jn.physiology.org\_content\_jn\_28\_2\_229.full.pdf:pdf},
+isbn = {0022-3077 (Print)},
+issn = {0022-3077},
+journal = {Journal of neurophysiology},
+keywords = {AXONS,BRAIN ELECTROPHYSIOLOGY,BRAIN MAPPING,CATS,EXPERIMENTAL LAB STUDY,GENICULATE BODIES,MICROSCOPY,OCCIPITAL LOBE,RECEPTORS, NEURAL,RETINA,STAINS AND STAINING,VISION,VISUAL FIELDS},
+mendeley-groups = {survey\_icip2015/introduction},
+pages = {229--289},
+pmid = {14283058},
+title = {{Receptive Fields and Functional Architecture in Two Nonstriate Visual Areas (18 and 19) of the Cat.}},
+volume = {28},
+year = {1965}
+}
+
+
+
 
 
 
