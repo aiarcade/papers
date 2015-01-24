@@ -196,6 +196,81 @@ url = {http://arxiv.org/abs/1406.4729v1$\backslash$npapers3://publication/uuid/0
 volume = {cs.CV},
 year = {2014}
 }
+@article{Sivic2003,
+author = {Sivic, J and Zisserman, A},
+file = {:data/dev/object\_classifiers/ref/sivic03.pdf:pdf},
+isbn = {0769519504},
+journal = {Proc. CVPR},
+mendeley-groups = {survey\_icip2015/fundmental\_papers},
+number = {Iccv},
+pages = {2--9},
+title = {{A text retrieval approach to object matching in videos}},
+year = {2003}
+}
+
+@article{Grauman2005,
+abstract = {Discriminative learning is challenging when examples are sets of features, and the sets vary in cardinality and lack any sort of meaningful ordering. Kernel-based classification methods can learn complex decision boundaries, but a kernel over unordered set inputs must somehow solve for correspondences epsivnerally a computationally expensive task that becomes impractical for large set sizes. We present a new fast kernel function which maps unordered feature sets to multi-resolution histograms and computes a weighted histogram intersection in this space. This "pyramid match" computation is linear in the number of features, and it implicitly finds correspondences based on the finest resolution histogram cell where a matched pair first appears. Since the kernel does not penalize the presence of extra features, it is robust to clutter. We show the kernel function is positive-definite, making it valid for use in learning algorithms whose optimal solutions are guaranteed only for Mercer kernels. We demonstrate our algorithm on object recognition tasks and show it to be accurate and dramatically faster than current approaches},
+author = {Grauman, Kristen and Darrell, Trevor},
+doi = {10.1109/ICCV.2005.239},
+file = {:data/dev/object\_classifiers/ref/grauman\_darrell\_iccv05.pdf:pdf},
+isbn = {076952334X},
+issn = {1550-5499},
+journal = {Proceedings of the IEEE International Conference on Computer Vision},
+mendeley-groups = {survey\_icip2015/fundmental\_papers},
+number = {October},
+pages = {1458--1465},
+title = {{The pyramid match kernel: Discriminative classification with sets of image features}},
+volume = {II},
+year = {2005}
+}
+
+@INPROCEEDINGS{1641019, 
+author={Lazebnik, S. and Schmid, C. and Ponce, J.}, 
+booktitle={Computer Vision and Pattern Recognition, 2006 IEEE Computer Society Conference on}, 
+title={Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories}, 
+year={2006}, 
+month={}, 
+volume={2}, 
+pages={2169-2178}, 
+keywords={Histograms;Image databases;Image recognition;Image representation;Image segmentation;Layout;Object recognition;Robustness;Shape;Spatial databases}, 
+doi={10.1109/CVPR.2006.68}, 
+ISSN={1063-6919},}
+
+@article{Zeiler2013,
+abstract = {Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky $\backslash$etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.},
+archivePrefix = {arXiv},
+arxivId = {1311.2901},
+author = {Zeiler, Matthew D and Fergus, Rob},
+eprint = {1311.2901},
+file = {:data/dev/object\_classifiers/ref/zeilerECCV2014.pdf:pdf},
+journal = {arXiv preprint arXiv:1311.2901},
+mendeley-groups = {survey\_icip2015/2013},
+pages = {818--833},
+title = {{Visualizing and Understanding Convolutional Networks}},
+url = {http://arxiv.org/abs/1311.2901},
+year = {2013}
+}
+
+@article{Goodfellow2013,
+abstract = {We consider the problem of designing models to leverage a recently introduced approximate model averaging technique called dropout. We define a simple new model called maxout (so named because its output is the max of a set of inputs, and because it is a natural companion to dropout) designed to both facilitate optimization by dropout and improve the accuracy of dropout's fast approximate model averaging technique. We empirically verify that the model successfully accomplishes both of these tasks. We use maxout and dropout to demonstrate state of the art classification performance on four benchmark datasets: MNIST, CIFAR-10, CIFAR-100, and SVHN.},
+archivePrefix = {arXiv},
+arxivId = {1302.4389},
+author = {Goodfellow, Ian J. and Warde-Farley, David and Mirza, Mehdi and Courville, Aaron and Bengio, Yoshua},
+eprint = {1302.4389},
+file = {:data/dev/object\_classifiers/ref/1302.4389v4.pdf:pdf},
+journal = {arXiv preprint},
+mendeley-groups = {survey\_icip2015/2013},
+pages = {1319--1327},
+title = {{Maxout Networks}},
+url = {http://arxiv.org/abs/1302.4389},
+year = {2013}
+}
+
+
+
+
+
+
 
 
 

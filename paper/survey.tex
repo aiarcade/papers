@@ -4,6 +4,17 @@
 \begin{document}
 \section{notes}
 SPP is trying to avoid data augmentation . But the latest one introducing it model more sophisticated system.
+Terms:dropout,maxout network
+Reducing filter size help to improve system.Increasing depth will help. 
+
+\section{Network In Network }
+Inspired by the work of Ian J. Goodfellow et al.\cite{Goodfellow2013} on maxout networks,  Min Lin et al.\cite{{Lin2013} introduced a micro network in each convolution layer so that it will compute more abstract features.This network gave a state-of-the-art performance in  ILSVRC 2013 competition with an error rate of 12.95\%.
+
+
+
+\section{Visualizing and Understanding Convolutional Networks}
+
+Matthew D. Zeiler and Rob Fergus\cite{Zeiler2013} presented a method to visualize the function of intermediate feature layers of CNNs and used as a diagnostic tool to improve  the model proposed by Krizhevsky et al.\cite{Krizhevsky2012a}. This method helped  them  to understand  activation in the feature maps with respect to the input patterns. It shows Krizhevsky et al.'s architecture does not have  enough mid frequency coverage in the first layer filters and aliasing artifacts caused by  large stride in the first layer convolutions. Authors solved this problems by decreasing filter size to $7\times7$ and reducing stride to 2.This implementation won the  ILSVRC 2013 competition with an error rate of 11.74\%
 
 \section{Spatial pyramid pooling in Deep Convolutional Networks}
 Instead of using fixed input size in CNNs, Kaiming He et al.\cite{He2014} suggested  the use of a spooling strategy called  spatial pyramid pooling(SPP)\cite{Grauman2005}\cite{1641019} to avoid cropping or warping of  images. It introduced a new layer on top of the convolution layer and perform aggregation  based on Bag-of-Words (BoW) model \cite{Sivic2003}. But the classical back propagation training methods expect layers to have a fixed   size. To overcome this problem author implemented two fixed size networks with shared parameters and switch the network on alternate epochs. This network is trained using a single GeForce GTX Titan GPU with a starting  learning rate of 0.01 and achieved  a less  error rate of 8.06\% on  ILSVRC 2014 data set. 
@@ -12,12 +23,12 @@ This implementation improves the performance of baseline architectures including
 %
 
 \section{Going deeper with convolutions }
-Christian Szegedy and et al.\cite{Szegedy} proposed a network named GoogLeNet with receptive field(input layer) of size $244*244$ with the number of layers around 100. Network is trained using asynchronous stochastic gradient descent with 0.9 momentum and fixed learning rate schedule based on  no of epochs 
+Christian Szegedy and et al.\cite{Szegedy} proposed a network named GoogLeNet with receptive field(input layer) of size $244\times244$ with the number of layers around 100. Network is trained using asynchronous stochastic gradient descent with 0.9 momentum and fixed learning rate schedule based on  no of epochs 
 . Learning procedure took advantage of  model and data-parallelism in a CPU-based cluster environment. This network gave an error rate of  6.67\%  on  ILSVRC 2014 data set. Their result shows that use of existing dense  blocks to  build the sparse structure can improve the  performance of convolutional networks.
 
 
 \section{VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION}
-Karen Simonyan and Andrew Zisserman \cite{Arge2015} evaluated the effect of network depth in image classification using very small convolution filters. Their deep network architecture comprise of fixed  size input layers , a stack of convolution layers , three Fully-Connected (FC) layers and  5 max-pooling layers for spatial spooling  over a $2 x 2$ pixel window with stride 2. Hidden layers are modeled using Rectified Linear Units(ReLU)\cite{Nair2010}. On the hardware side, it uses a multi-GPU system with NVIDIA Titan Black GPUs. Network is trained using multinomial logistic regression  based on backpropagation with momentum of 0.9 and  batch size  256.
+Karen Simonyan and Andrew Zisserman \cite{Arge2015} evaluated the effect of network depth in image classification using very small convolution filters. Their deep network architecture comprise of fixed  size input layers , a stack of convolution layers , three Fully-Connected (FC) layers and  5 max-pooling layers for spatial spooling  over a $2 \times 2$ pixel window with stride 2. Hidden layers are modeled using Rectified Linear Units(ReLU)\cite{Nair2010}. On the hardware side, it uses a multi-GPU system with NVIDIA Titan Black GPUs. Network is trained using multinomial logistic regression  based on backpropagation with momentum of 0.9 and  batch size  256.
 \par
  In this work authors formed a conclusion that greater depth with small convolution filters and  initialization of certain layers will cause the learning process to converge in less number  of epochs. This model of the convolution network does not differ from the classical architecture proposed by  LeCun et al.\cite{LeCun1998}. But the authors reported a significant improvement in the performance using an increased depth.  This implementation results in a significant improvement in accuracy with  an error rate of  6.8\% in  ILSVRC 2014 of ImageNet.
 
