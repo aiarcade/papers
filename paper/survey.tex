@@ -7,14 +7,17 @@ SPP is trying to avoid data augmentation . But the latest one introducing it mod
 Terms:dropout,maxout network
 Reducing filter size help to improve system.Increasing depth will help. 
 \section{Multi-stage Hubel-Wiesel architecture}
-In 1962, Hubel DH and Wiesel TN\cite{Hubel1962},\cite{Hubel1965a} was studied visual cortex of anaesthetized cats  with   spots of white light of various shapes. They classified the  cells in the visual system in to  simple,complex and hypercomplex . Simple cells are influenced  by the arrangement of  excitatory and inhibitory regions of the receptive field and  position of stimulus is important . This cells receives input from cells of the lateral geniculate nucleus, which is connected to retina. But the complex cells will responds to  a properly  oriented stimulus regardless of the cell position in the receptive field. Complex cells are activated by edge,dark bar,slit and mixed stimuli . Hypercomplex cells are activated by edge,single-stopped(corner),double-stopped (tongue),slit(double-stopped)and dark bar(double-stopped).
+In 1962, Hubel DH and Wiesel TN\cite{Hubel1962},\cite{Hubel1965a} was studied visual cortex of anaesthetized cats  with   spots of white light of various shapes. They classified the  cells in the visual system in to  simple,complex and hypercomplex . Simple cells are influenced  by the arrangement of  excitatory and inhibitory regions of the receptive field and  position of stimulus is important . This cells receives input from cells of the lateral geniculate nucleus(LGN), which is connected to retina. But the complex cells will responds to  a properly  oriented stimulus regardless of the cell position in the receptive field. Complex cells are activated by edge,dark bar,slit and mixed stimuli . Hypercomplex cells are activated by edge,single-stopped(corner),double-stopped (tongue),slit(double-stopped)and dark bar(double-stopped).
 
 \par Hubel DH and Wiesel TN \cite{Hubel1965a} presented a functional hierarchical structure of the visual cortex . According to their model, visual perception cells are in the  order , $simple\Longrightarrow complex\Longrightarrow lower \ order  \ hypercomplex  \Longrightarrow higher \ order \ hypercomplex$. Activation of  lower stage is  influenced by  the position of the input patterns and  higher stages are  position-invariant. There are several  contradictory to this structure, but no one   completely deny this hierarchical model.
 \par Inspired by this work  , Fukushima, K \cite{Stark1980} proposed a neural network model for pattern recognition called neocognitron.
-
-
-
-
+In neocognitron , cells are arranged in  a number of  cascded structure. Each  structure $U$ include a  simple cell layer $U_s$ and a complex cell layer $U_c$. This network is not affected by change in position or small distortion in the shape of patterns.  It is also capable to do self organization based on an unsupervised competitive learning algorithm\cite{Fukushima1982} in the first two layers and classification based on  supervised learning in the output layer.
+\begin{figure}[ht]
+ \includegraphics[]{Figures/neocognitron.eps}
+\caption{Neocognitron\cite{Stark1980}}
+\label{neo}
+\end{figure}
+\par This design was improved by  Yann LeCun \cite{lecun-86},\cite{lecun-89d}, \cite{lecun-89e},\cite{lecun-90c}, \cite{lecun-90e} using backpropagation algorithm\cite{BRYSON1963} to train the entire system.
 
 
 
