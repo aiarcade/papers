@@ -2301,8 +2301,47 @@ year	=	"1985" ,
 pages	=	"599-604" 
 }
 
+@article{Fukushima1982,
+abstract = {OCR-PR82},
+author = {Fukushima, Kunihiko and Miyake, Sei},
+doi = {10.1016/0031-3203(82)90024-3},
+file = {:data/dev/object\_classifiers/ref/Fukushima\_Miyake.pdf:pdf},
+issn = {00313203},
+journal = {Pattern Recognition},
+mendeley-groups = {survey\_icip2015/introduction},
+number = {6},
+pages = {455--469},
+title = {{Neocognitron: A new algorithm for pattern recognition tolerant of deformations and shifts in position}},
+volume = {15},
+year = {1982}
+}
+
+@article{BRYSON1963,
+annote = {doi: 10.2514/3.2107},
+author = {BRYSON, A E and DENHAM, W F and DREYFUS, S E},
+doi = {10.2514/3.2107},
+issn = {0001-1452},
+journal = {AIAA Journal},
+mendeley-groups = {survey\_icip2015/introduction},
+month = nov,
+number = {11},
+pages = {2544--2550},
+publisher = {American Institute of Aeronautics and Astronautics},
+title = {{OPTIMAL PROGRAMMING PROBLEMS WITH INEQUALITY CONSTRAINTS}},
+url = {http://dx.doi.org/10.2514/3.2107},
+volume = {1},
+year = {1963}
+}
 
 
+@inproceedings{lecun2010convolutional,
+  title={Convolutional networks and applications in vision},
+  author={LeCun, Yann and Kavukcuoglu, Koray and Farabet, Cl{\'e}ment},
+  booktitle={Circuits and Systems (ISCAS), Proceedings of 2010 IEEE International Symposium on},
+  pages={253--256},
+  year={2010},
+  organization={IEEE}
+}
 
 
 
