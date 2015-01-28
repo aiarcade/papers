@@ -125,60 +125,61 @@ This implementation improves the performance of baseline architectures including
 
 \subsection{Going deeper with convolutions }
 Christian Szegedy and et al. \cite{Szegedy} proposed a network named GoogLeNet with receptive field(input layer) of size $244\times244$ with the number of layers around 100. Network is trained using asynchronous stochastic gradient descent with 0.9 momentum and fixed learning rate schedule based on  no of epochs 
-. Learning procedure took advantage of  model and data-parallelism in a CPU-based cluster environment. This network gave an error rate of  6.67\%  on  ILSVRC 2014 data set. Their result shows that use of existing dense  blocks to  build the sparse structure can improve the  performance of convolutional networks.
+. Learning procedure took advantage of  model and data-parallelism in a CPU-based cluster environment. This network gave an error rate of  6.67\%  on  ILSVRC 2014 data set. This experiments shows that use of existing dense  blocks to  build the sparse structure can improve the  performance of convolutional networks. Even if higher depth will increase the accuracy , this system will end up with implementing large number of hidden layers to increase accuracy for a high frequency input. 
 
 
 \section{VERY DEEP CONVOLUTIONAL NETWORKS }
 Karen Simonyan and Andrew Zisserman \cite{Arge2015} evaluated the effect of network depth in image classification using very small convolution filters. Their deep network architecture comprise of fixed  size input layers , a stack of convolution layers , three Fully-Connected (FC) layers and  5 max-pooling layers for spatial spooling  over a $2 \times 2$ pixel window with stride 2. Hidden layers are modeled using Rectified Linear Units(ReLU)\cite{Nair2010}. On the hardware side, it uses a multi-GPU system with NVIDIA Titan Black GPUs. Network is trained using multinomial logistic regression  based on backpropagation with momentum of 0.9 and  batch size  256.
 \par
- In this work authors formed a conclusion that greater depth with small convolution filters and  initialization of certain layers will cause the learning process to converge in less number  of epochs. This model of the convolution network does not differ from the classical architecture proposed by  LeCun et  al. \cite{LeCun1998}. But the authors reported a significant improvement in the performance using an increased depth.  This implementation results in a significant improvement in accuracy with  an error rate of  6.8\% in  ILSVRC 2014 of ImageNet.
+It has been observed that greater depth with small convolution filters and  initialization of certain layers will cause the learning process to converge in less number  of epochs and also significant improvement in accuracy. This model of the convolution network does not differ from the classical architecture proposed by  LeCun et  al. \cite{LeCun1998}. This implementation results in a significant improvement in accuracy with  an error rate of  6.8\% in  ILSVRC 2014 of ImageNet.
 
 \begin{subsection}{Scaling up Image Classification}
-The latest attempt in image classification with an error 5.98\% in ImageNet data set is reported by  Ren Wu et al. \cite{Wu2015} of Baidu research.They developed an end to end deep learning  system named Deep Image. It uses a highly optimized parallel algorithm  to implement large deep neural network with augmented input data. The network is trained using stochastic gradient decent algorithms (SGD on a custom built high performance system comprised of 36 server nodes, each with 2 six-core Intel Xeon E5-2620 processors and 4 NVIDIA Tesla K40m GPUs . System  uses an InfiniBand  network for interconnections. Parallelism strategies used in their network are model-data parallelism and data parallelism.  These methods have been proposed by Alex Krizhevsky \cite{Krizhevsky2014} and Omry Yadan et al. \cite{Yadan2013} for training convolutional neural networks with SGD on a  multiple GPU systems. However, it is not easy extend the same strategies to multiple GPU clusters because of the communication overhead. So the  Baidu Team focused on minimizing network data transfers and overlapping the computation. They use butterfly synchronization and lazy update strategies to achieve data parallelism in the gradient computation. Their results show model-data parallelism is better when number of GPUs is less than 16. Implementation of Data parallelism in a large number  of GPU  cluster is better because of the constant communication requirements.
+The latest attempt in image classification with an error 5.98\% in ImageNet data set is reported by  Ren Wu et al. \cite{Wu2015} of Baidu research.They developed an end to end deep learning  system named Deep Image. It uses a highly optimized parallel algorithm  to implement large deep neural network with augmented input data. The network is trained using stochastic gradient decent algorithms (SGD on a custom built high performance system comprised of 36 server nodes, each with 2 six-core Intel Xeon E5-2620 processors and 4 NVIDIA Tesla K40m GPUs . System  uses an InfiniBand  network for interconnections. Parallelism strategies used in this network are model-data parallelism and data parallelism.  These methods have been proposed by Alex Krizhevsky \cite{Krizhevsky2014} and Omry Yadan et al. \cite{Yadan2013} for training convolutional neural networks with SGD on a  multiple GPU systems. However, it is not easy extend the same strategies to multiple GPU clusters because of the communication overhead. So the  major objective is to minimize network data transfers and dynamic computation. So it uses butterfly synchronization and lazy update strategies to achieve data parallelism in the gradient computation. This approaches  shows that model-data parallelism is better when number of GPUs is less than 16. Implementation of Data parallelism in a large number  of GPU  cluster is better because of the constant communication requirements.
 \par
-The authors have explored different data augmentation techniques to increase the number of labeled images in the training set. This includes color casting, Vignetting, Lens distortion, Rotation, Flipping, and  Cropping. Instead of using the same resolution on all images, they have trained separate models at different scales, combined results by averaging soft-max class posteriors.
+Data augmentation techniques  are used to increase the number of labeled images in the training set. This includes color casting, Vignetting, Lens distortion, Rotation, Flipping, and  Cropping. Instead of using the same resolution on all images. Affine transformations on   the data set may increase the accuracy, But the major problems like occlusion, presence or absence of structural components, lighting conditions doesn't solve by applying simple augmentation techniques on the same data set. 
+\begin{table*}[ht]
+ \begin{tabular}{ | p{3cm} | l | p{1.4cm} |p{1.3cm} |p{1cm} |p{1.2cm} |p{1.1cm} |p{6cm}|}
+    \hline
+Team	&Year	&Data Augmentation	&scalable over network	&Time taken	&Hardware	&Error on  ILSVRC & Observations
+\\ 
+\hline
+Ren Wu et al.\cite{Wu2015}	&2015	&aggressive	&Yes	&8.8 hours	&multi-GPU cluster	&5.98\% &Aggressive augmentation  will make the problem depend on data set\\
+\hline
+Karen Simonyan and Andrew Zisserman.\cite{Arge2015}	&2014	&minimum	&No	&3 weeks	&multi-GPU	&6.80\% &Effect of small convolution filter in low frequency domain need to be studied\\
+\hline
+Christian Szegedy and et al.\cite{Szegedy}	&2014	&minimum	&Yes	&more than a week	&CPU cluster	&6.67\% &Inserting more layers will make system depends on the data set \\
+\hline
+Kaiming He et al.\cite{He2014}	&2014	&minimum	&No	&4 weeks	&single GPU	&8.06\% &Good method, But higher time complexity\\
+\hline
+Matthew D. Zeiler and Rob Fergus \cite{Zeiler2013}	&2013	&minimum	&No	&12 days	&single GPU	&11.74\% & Visualizations are not possible in very deep network\\
+\hline
+Min Lin et al.\cite{Lin2013}	&2013	&minimum	&No	&Not reported	&single GPU	&12.95\% &Inserting more layers will over-fit the system \\
+\hline
+Krizhevsky, et al.\cite{Krizhevsky2012a}	&2012	&minimum	&No	&6 days	&multi-GPU	&15.30\% & Effect of rectifier must be studied further\\
+\hline
 
+\end{tabular}
+\caption[]{ Top 5 error rate in ILSVRC}
+\end{table*}
 \par
  Major contribution of this work is the demonstration of tremendous computational power to achieve high accuracy in image classification.
 It also shows augmented multi-scale images can be combined to achieve less error rate in convolutional network in the context of the image classification. 
  \end{subsection}
- \section {Summary}
+ \section {Observations}
+ After detailed analysis of the latest literature , we are listing some of the observations.
  \begin{enumerate}
  
- \item Wisely chosen data  augmentation techniques can increase the performance of the network.
- \item Data parallelism and model parallelism can increase the speed of the training process.
- \item Greater depth with small convolution filters will improve the accuracy.
+ \item Wisely chosen data  augmentation techniques can increase the performance of the network. But need to be tested with multiple data set.
+ \item Data parallelism and model parallelism can increase the speed of the training process. This area can be exploited further to increase the speed of the training process.
+ \item Greater depth with small convolution filters will improve the accuracy. But response to different frequency input must be studied .
  \item Network will get benefited from   image  in different scale .
  \item Use of different pooling technique such as spatial pyramid pooling in sub-architectural  level may reduce the error rate. 
- \item  Rectified Linear Units can increase the speed of SGD.
+ \item  Rectified Linear Units can increase the speed of SGD. 
  
  
  \end{enumerate}
  
- \begin{table}[h]
- \begin{tabular}{ | p{5cm} | l | l |}
-    \hline
-Team	&Year	&Top 5 error\\
-    \hline
-        \hline
-Ren Wu et al.\cite{Wu2015}	&2015	&5.98\%\\
-    \hline
-Karen Simonyan and Andrew Zisserman.\cite{Arge2015}	&2014	&6.80\%\\
-    \hline
-Christian Szegedy and et al.\cite{Szegedy}	&2014	&6.67\%\\
-    \hline
-Kaiming He et al.\cite{He2014}	&2014	&8.06\%\\
-    \hline
-Matthew D. Zeiler and Rob Fergus \cite{Zeiler2013}	&2013	&11.74\%\\
-    \hline
-Min Lin et al.\cite{Lin2013}	&2013	&12.95\%\\
-    \hline
-Krizhevsky, et al.\cite{Krizhevsky2012a}	&2012	&15.30\%\\
-    \hline
-
-\end{tabular}
-\caption[]{ Top 5 error rate in ILSVRC}
-\end{table}
+ 
 
 \section{conclusion}
 This paper attempts to provide a  review of research on deep convolutional networks  and provide an overview of  its architecture and performance. Majority of the reviewed  works are reported from ImageNet Largqe-Scale Visual Recognition Challenge. There is no work exist to our knowledge, that explain all underpinning mathematics  of  deep convolutional  networks. This networks can only be trained using very expensive computing resources such as multiGPU cluster  to achieve more accuracy on large data sets. So  this research heavily depends on other research domains such as parallel algorithms, computer networks and multicore architecture. Because of the heavy computational requirements, it is not easy to apply this method directly  to the small level computing platforms such as embedded systems and application level  processors. On the other side, this methods can easily bring  live with the help of  cloud computing infrastructure, so to the mobility solutions such as mobile phones and the web.
