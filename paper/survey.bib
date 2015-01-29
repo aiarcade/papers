@@ -115,7 +115,7 @@ neural network character recognizers combined with global training
 techniques to provide record accuracy on business and personal cheques.
 It is deployed commercially and reads several million cheques per day
 },
-author = {LeCun, Yann and Bottou, L\'{e}on and Bengio, Yoshua and Haffner, Patrick},
+author = {LeCun et al.},
 doi = {10.1109/5.726791},
 file = {:home/mahesh/paper/survey/ref/lecun-01a.pdf:pdf},
 isbn = {0018-9219},
@@ -163,7 +163,7 @@ year = {2013}
 abstract = {We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSRVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5\% and 17.0\% which is considerably better than the previous state of the art. The neural network, which has 60 million paramters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolutional operation. To reduce overfitting in the fully-connected layers, we employed a recently-developed method called 'dropout' that proved to be effective. We also entered a variant of the model in the ILSVRC-2012 competition and achievd a top-5 test error rate of 15.3\%, compared to 26.2\% achieved by the second-best entry.},
 archivePrefix = {arXiv},
 arxivId = {1102.0183},
-author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+author = {Krizhevsky, Alex and et al.},
 eprint = {1102.0183},
 file = {:data/dev/object\_classifiers/ref/7.pdf:pdf},
 isbn = {9781627480031},
@@ -190,33 +190,18 @@ title = {{OverFeat : Integrated Recognition , Localization and Detection using C
 url = {http://arxiv.org/abs/1312.6229},
 year = {2013}
 }
-@article{He2014,
-abstract = {Existing deep convolutional neural networks (CNNs) require a fixed-size (e.g. 224x224) input image. This requirement is "artificial" and may hurt the recognition accuracy for the images or sub-images of an arbitrary size/scale. In this work, we equip the networks with a more principled pooling strategy, "spatial pyramid pooling", to eliminate the above requirement. The new network structure, called SPP-net, can generate a fixed-length representation regardless of image size/scale. By removing the fixed-size limitation, we can improve all CNN-based image classification methods in general. Our SPP-net achieves state-of-the-art accuracy on the datasets of ImageNet 2012, Pascal VOC 2007, and Caltech101. The power of SPP-net is more significant in object detection. Using SPP-net, we compute the feature maps from the entire image only once, and then pool features in arbitrary regions (sub-images) to generate fixed-length representations for training the detectors. This method avoids repeatedly computing the convolutional features. In processing test images, our method computes convolutional features 30-170x faster than the recent leading method R-CNN (and 24-64x faster overall), while achieving better or comparable accuracy on Pascal VOC 2007.},
-archivePrefix = {arXiv},
-arxivId = {1406.4729},
-author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
-doi = {10.1109/TPAMI.2015.2389824},
-eprint = {1406.4729},
-file = {:data/dev/object\_classifiers/ref/1406.4729v3.pdf:pdf},
-journal = {arXiv preprint arXiv \ldots},
-mendeley-groups = {survey\_icip2015,survey\_icip2015/2014},
-pages = {1--14},
-title = {{Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition}},
-url = {http://arxiv.org/abs/1406.4729v1$\backslash$npapers3://publication/uuid/09415D06-A785-4329-82C0-B9FF2B1FEAB7},
-volume = {cs.CV},
-year = {2014}
-}
-@article{Sivic2003,
-author = {Sivic, J and Zisserman, A},
-file = {:data/dev/object\_classifiers/ref/sivic03.pdf:pdf},
-isbn = {0769519504},
-journal = {Proc. CVPR},
-mendeley-groups = {survey\_icip2015/fundmental\_papers},
-number = {Iccv},
-pages = {2--9},
-title = {{A text retrieval approach to object matching in videos}},
-year = {2003}
-}
+@ARTICLE{He2014, 
+author={He, K. and Zhang, X. and Ren, S. and Sun, J.}, 
+journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on}, 
+title={Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition}, 
+year={2015}, 
+month={}, 
+volume={PP}, 
+number={99}, 
+pages={1-1}, 
+keywords={Accuracy;Agriculture;Convolutional codes;Feature extraction;Testing;Training;Vectors;Convolutional Neural Networks;Image Classification;Object Detection;Spatial Pyramid Pooling}, 
+doi={10.1109/TPAMI.2015.2389824}, 
+ISSN={0162-8828},}
 
 @article{Grauman2005,
 abstract = {Discriminative learning is challenging when examples are sets of features, and the sets vary in cardinality and lack any sort of meaningful ordering. Kernel-based classification methods can learn complex decision boundaries, but a kernel over unordered set inputs must somehow solve for correspondences epsivnerally a computationally expensive task that becomes impractical for large set sizes. We present a new fast kernel function which maps unordered feature sets to multi-resolution histograms and computes a weighted histogram intersection in this space. This "pyramid match" computation is linear in the number of features, and it implicitly finds correspondences based on the finest resolution histogram cell where a matched pair first appears. Since the kernel does not penalize the presence of extra features, it is robust to clutter. We show the kernel function is positive-definite, making it valid for use in learning algorithms whose optimal solutions are guaranteed only for Mercer kernels. We demonstrate our algorithm on object recognition tasks and show it to be accurate and dramatically faster than current approaches},
@@ -265,7 +250,7 @@ year = {2013}
 abstract = {We consider the problem of designing models to leverage a recently introduced approximate model averaging technique called dropout. We define a simple new model called maxout (so named because its output is the max of a set of inputs, and because it is a natural companion to dropout) designed to both facilitate optimization by dropout and improve the accuracy of dropout's fast approximate model averaging technique. We empirically verify that the model successfully accomplishes both of these tasks. We use maxout and dropout to demonstrate state of the art classification performance on four benchmark datasets: MNIST, CIFAR-10, CIFAR-100, and SVHN.},
 archivePrefix = {arXiv},
 arxivId = {1302.4389},
-author = {Goodfellow, Ian J. and Warde-Farley, David and Mirza, Mehdi and Courville, Aaron and Bengio, Yoshua},
+author = {Goodfellow, Ian J. and et al.},
 eprint = {1302.4389},
 file = {:data/dev/object\_classifiers/ref/1302.4389v4.pdf:pdf},
 journal = {arXiv preprint},
@@ -1487,10 +1472,7 @@ year =		1995
  
 @inproceedings     { lecun-95b,
 original =    "orig/lecun-95b.ps.gz",
-author  =       "LeCun, Y. and Jackel, L. D. and Bottou, L. and Brunot, A. and
-		  Cortes, C. and Denker, J. S. and Drucker, H. and
-		  Guyon, I. and Muller, U. A. and Sackinger,
-		  E. and Simard, P. and Vapnik, V.",
+author  =       "Y. LeCun. et al.",
 title   =       "Comparison of learning algorithms for handwritten digit recognition",
 booktitle=      "International Conference on Artificial Neural Networks",
 year    =       "1995",
@@ -1763,7 +1745,7 @@ YEAR = 	 	1993,
 
 
 @inproceedings     { lecun-92a,
-author  =       "LeCun, Y. and Boser, B.  and Denker, J. S. and Henderson, D. and Howard, R. E. and Hubbard, W. and Jackel,  L. D.",
+author  =       Y. LeCun et al.",
 title   =       "Handwritten digit recognition with a back-propagation network",
 booktitle=      "Neural Netwotks, current applications",
 year    =       "1992",
@@ -1816,7 +1798,7 @@ publisher =     "IEEE Computer Society Press",
 }
 
 @inproceedings {lecun-92,
-author  =       "LeCun, Y. and Jackel,  L. D. and Boser, B.  and Denker, J. S.  and Graf, H. P. and Guyon, I. and Henderson, D. and Howard, R. E. and Hubbard, W.",
+author  =       "Y. LeCun et al.",
 title   =        "Handwritten Digit Recognition: Applications of Neural Net Chips and Automatic Learning",
 year =	       1992,
 booktitle =    "Artificial Neural Networks",
@@ -2057,7 +2039,7 @@ month   =       "june"
 
 @inproceedings     { lecun-90e,
 original =    "ieee/lecun-90e.pdf",
-author  =       "LeCun, Y. and Matan, O. and Boser, B.  and Denker, J. S. and Henderson, D. and Howard, R. E. and Hubbard, W. and Jackel,  L. D. and Baird, H. S.",
+author  =       "Y. LeCun et al.",
 title   =       "Handwritten Zip Code Recognition with Multilayer Networks",
 booktitle=      "Proc. of the International Conference on Pattern Recognition",
 address =       "Atlantic City", 
@@ -2128,8 +2110,7 @@ year =           "1990"
 
 @article         { lecun-89e,
 original =    "orig/lecun-89e.tiff",
-author  =       "LeCun, Y. and Boser, B.  and Denker, J. S. and Henderson, D.
- and Howard, R. E. and Hubbard, W. and Jackel,  L. D.",
+author  =       "Y. LeCun  et al.",
 title   =        "Backpropagation Applied to Handwritten Zip Code Recognition",
 journal =        "Neural Computation",
 year    =        "1989",
@@ -2140,7 +2121,7 @@ month   =        "Winter"
 }
 
 @inproceedings         { lecun-89d,
-author  =       "LeCun, Y. and Jackel,  L. D. and Boser, B.  and Denker, J. S.  and Graf, H. P. and Guyon, I. and Henderson, D. and Howard, R. E. and Hubbard, W.",
+author  =       "Y. LeCun  et al.",
 title   =        "Handwritten Digit Recognition: Applications of Neural Net Chips and Automatic Learning",
 booktitle =      "Neurocomputing, Algorithms, Architectures and Applications",
 address =        "Les Arcs, France",
@@ -2151,7 +2132,7 @@ publisher=       "Springer",
 
 @article         { lecun-89c,
 original =    "orig/lecun-89c.tiff",
-author  =       "LeCun, Y. and Jackel,  L. D. and Boser, B.  and Denker, J. S.  and Graf, H. P. and Guyon, I. and Henderson, D. and Howard, R. E. and Hubbard, W.",
+author  =       "Y. LeCun et al.",
 title   =        "Handwritten Digit Recognition: Applications of Neural Net Chips and Automatic Learning",
 journal =        "IEEE Communication",
 year    =        "1989",
@@ -2295,7 +2276,6 @@ title	=	"Learning Processes in an Asymmetric Threshold Network",
 booktitle=	"Disordered systems and biological organization",
 address	=	"Les Houches, France" ,
 year	=	"1986" ,
-editor  =       "Bienenstock, E. and {Fogelman-Souli\'e}, F. and Weisbuch, G.",
 publisher =     "Springer-Verlag",
 pages	=	"233-240"
 }
@@ -2351,10 +2331,7 @@ year = {1982}
 
 
 @article{Ciresan:2012g,
-  author    = {Dan Claudiu Ciresan and
-               Ueli Meier and
-               Luca Maria Gambardella and
-               J{\"u}rgen Schmidhuber},
+  author    = {Dan Claudiu Ciresan et al.},
   title     = {Deep Big Multilayer Perceptrons For Digit Recognition},
   journal   = {Neural Networks Tricks of the Trade},
   volume    = {1},
@@ -2372,10 +2349,8 @@ year = {1982}
 
 
 @article{deepfwd,
-  author    = {Bogdan Miclut and
-               Thomas K{\"{a}}ster and
-               Thomas Martinetz and
-               Erhardt Barth},
+  author    = {Bogdan Miclut et al.
+              },
   title     = {Committees of deep feedforward networks trained with few data},
   journal   = {CoRR},
   volume    = {abs/1406.5947},

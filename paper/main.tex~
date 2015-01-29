@@ -12,11 +12,11 @@
 
 % Title.
 % ------
-\title { Deep Convolutional networks for large scale image classification - A Survey  }
+\title{AUTHOR GUIDELINES FOR ICIP 2015 PROCEEDINGS MANUSCRIPTS}
 %
 % Single address.
 % ---------------
-\name{Author(s) Name(s)}
+\name{Author(s) Name(s)\thanks{Thanks to XYZ agency for funding.}}
 \address{Author Affiliation(s)}
 %
 % For example:
@@ -44,147 +44,195 @@
 \maketitle
 %
 \begin{abstract}
-Image classification is an essential to the field of computer vision  based systems and recent research in this area explores better feature extraction, feature coding, and classification.  The purpose of this paper is to review the application of supervised  deep convolution networks in this field.   Numerous techniques have been reported to improve the performance of the convolution networks.   It has been shown that with a large amount of labeled data, convolution networks can learn very complex functions such as image classification and speech recognition. 
-
-
-
+The abstract should appear at the top of the left-hand column of text, about
+0.5 inch (12 mm) below the title area and no more than 3.125 inches (80 mm) in
+length.  Leave a 12 mm (0.5 in.) space between the end of the abstract and the
+beginning of the main text.  The abstract should contain about 100 to 150
+words, and should be identical to the abstract text submitted electronically
+along with the paper cover sheet.  All manuscripts must be in English, printed
+in black ink.
 \end{abstract}
 %
 \begin{keywords}
-convolution networks, deep learning , neural networks.
+One, two, three, four, five
 \end{keywords}
 %
 \section{Introduction}
 \label{sec:intro}
-The performance of an  image  classification system mainly depends on the  extraction and  representation of features.  Feature representation methods like Haralick texture features \cite{Haralick1973} got attention from the research community from the earlier days of  image classification. However, to develop features that are invariant to position, rotation, sailing, and distortion, researchers had  to  explore the visual perception of primates. This research  leads to  the development of many models such as convolutional neural networks\cite{LeCun1998} and  Kohonen map\cite{kohonen1982self}. 
-As a result, many successful image classification systems are  implemented with better accuracy \cite{lecun-89e}.
 
-Early in that stage, method like the convolutional network is limited by the  availability of labeled  data and computing infrastructure. Researchers are trying to overcome  this problem by many other non-parametric models such as SVM and KNN. But this methods couldn't give a high accuracy result  on any of  large-scale classification problem  and limited by the preprocessing technique.  However, in the recent years, the development of  High performance computing architecture such as general purpose graphical processing units (GPGPU )  accelerated the research in this field. Large scale image  dataset such as ImageNet\cite{imagenet}  with  millions of labeled samples is also accessible to the research community. This changes in data and computing, put back the convolution network with million of parameters in track. 
+These guidelines include complete descriptions of the fonts, spacing, and
+related information for producing your proceedings manuscripts. Please follow
+them and if you have any questions, direct them 
+\texttt{info@icip2015.org}.
 
+\section{Formatting your paper}
+\label{sec:format}
 
-\section{Multi-stage Hubel-Wiesel architecture}
-In 1962, Hubel DH and Wiesel TN\cite{Hubel1962},\cite{Hubel1965a} was studied visual cortex of anesthetized cats  with   spots of white light of various shapes. Cells in the visual system are classified    into  simple, complex and hypercomplex. Simple cells are influenced  by the arrangement of  excitatory and inhibitory regions of the receptive field, and  position of the stimulus is important. This cell receives input from cells of the lateral geniculate nucleus(LGN), which is connected to the retina. However, the complex cells will responds to  an appropriately  oriented stimulus regardless of the cell position in the receptive field. Complex cells are activated by edge, dark bar, slit and mixed stimuli. Hypercomplex cells are activated by edge,single-stopped(corner),double-stopped (tongue),slit(double-stopped)and dark bar(double-stopped).
+All printed material, including text, illustrations, and charts, must be kept
+within a print area of 178 mm (7 in.) wide by 229 mm (9 in.) high. Do
+not write or print anything outside the print area. The top margin must be 25 mm (1
+in.), except for the title page, and the left margin must be 19 mm (0.75 in.).  All {\it text} must be in a two-column format. Columns are to be 86 mm (3.39
+in.) wide, with a 6 mm (0.24 in.) space between them. Text must be
+fully justified.
 
-\par In the visual cortex, perception cells are in the  order,  simple$\Longrightarrow$ complex$\Longrightarrow$ lower order hypercomplex $\Longrightarrow$ higher  order hypercomplex. Activation of  a lower stage is  influenced by  the position of the input patterns, and  higher stages are  position-invariant. There are several  contradictory to this structure, but no one   completely deny this hierarchical model.
-\par Inspired by this work, Fukushima, K \cite{Stark1980} proposed a neural network model for pattern recognition called neocognitron.
-In neocognitron , cells are arranged in  a number of  cascaded structure. Each  structure $U$ include a  simple cell layer $U_s$ and a complex cell layer $U_c$. This network is not affected by change in position or small distortion in the shape of patterns.  It is also capable of doing self-organization based on an unsupervised competitive learning algorithm\cite{Fukushima1982} in the first two layers and classification based on  supervised learning in the output layer.
-\begin{figure}[ht]
- \centering
- \includegraphics[width=9cm]{Figures/neocognitron.eps}
-\caption{Neocognitron\cite{Stark1980}}
-\label{neo}
-\end{figure}
-\section{Convolutional Networks}
-\par Neocognitron was improved by  Yann LeCun \cite{lecun-86},\cite{lecun-89d}, \cite{lecun-89e},\cite{lecun-90c}, \cite{lecun-90e} using backpropagation algorithm\cite{BRYSON1963} to train the entire system.
-It uses  local receptive fields, share weights and  sub-sampling to achieve  shift, position and distortion invariance. A typical Convolutional Network called  LeNet-5 was proposed by   Yann LeCun et al.\cite{LeCun1998}  for document recognition. Using local receptive fields network can extract elementary visual features such as edges, end point, and corners. This features will combine to obtain high order features in the following layers.  Elementary feature detectors with identical weights can be useful in different parts of the image. So the units with  the same set of weights are arranged in plane and output from  the units of a plane is called  a feature map. Units in  a feature map perform the same operation on different parts of the same image. A convolution layer is composed of the set of feature maps with differently weighed units. In the implementation, a unit in the feature map scans the image and store the states in the feature map. This operation is equivalent to convolution with a kernel composed of a  set of weights and image. 
+\section{PAGE TITLE SECTION}
+\label{sec:pagestyle}
 
-\par
-A typical convolutional  network composed of multiple stages with a filter bank layer, a non-linearity layer and a feature pooling layer \cite{lecun2010convolutional} followed by a classification network.\\
-\begin{figure}[ht]
- \includegraphics[width=9.5cm]{Figures/convent.eps}
-\caption{A typical ConvNet architecture \cite{lecun2010convolutional}}
-\label{net}
-\end{figure}
-\emph{Filter Bank Layer:} This layer computes $y_{j}$ the convolution between a input feature map   $x_i$ and trainable filter kernel $k_{ij}$ 
-. ie. $y_j=b_j+\sum_i {k_{ij}*x_i}$. Where $b_j$ is a trainable bias , $i$ and $j$ are  array indices and $*$ is the convolution operator.\\
-\emph{Non-Linearity Layer:} This layer applies a non-linearity function such as $tanh(x)$ or $(1+e^{-x})^{-1}$ to unit output. But to reduce training time with gradient decent, new implementations uses the function $max(0,x)$. Units with this non-linearity is called Rectified Linear Units (ReLUs)\cite{Nair2010}.\\
-\emph{Feature Pooling Layer:} It  reduces the dimension of  feature map by applying the techniques like averaging or max-pooling.
-\begin{figure}[ht]
- \centering
- \includegraphics[width=8cm]{Figures/conv.eps}
-\caption{Output of  a randomly initialized   convolution filter. Input image courtesy:dcsku.org}
-\label{conv}
-\end{figure}
-But this architecture was limited by availability of the computing power and  sample data sets of that time. 
-%2012
+The paper title (on the first page) should begin 35 mm (1.38 in.) from the
+top edge of the page, centered, completely capitalized, and in Times 12-point,
+boldface type. The authors' name(s) and affiliation(s) appear below the title
+in capital and lower case letters. Papers with multiple authors and
+affiliations may require two or more lines for this information. Please note
+that papers should not be submitted blind; include the authors' names on the
+PDF.
 
-\section {Deep convolutional networks}
-In last few years convolutional networks shows a significant performance improvement in many small scale image classification on data sets  such as MNIST\cite{Ciresan:2012g},CIFAR-10,CIFAR-100,SVHN\cite{lee2014deeply},STL-10 \cite{deepfwd}. One of the state-of-the-art error rate is from Krizhevsky, et al.\cite{Krizhevsky2012a}. It consist of 60 million parameters and 650,000 neurons, with five convolutional layers followed by max-pooling layers and three fully-connected layers. Data set used in this experiment was a subset of ImageNet dataset, used in the competition ImageNet Large-Scale Visual Recognition Challenge (ILSVRC)\cite{imagenet} and reported an error rate of 15.3\%. ILSVRC data set includes 1.2 million images that contain 1,000 categories. This network uses rectifier  as the function in neurons.  Even if it shows improvement in speed, this  ill-conditioned parameterization must be studied further to understand the effect in very large networks.
+\section{TYPE-STYLE AND FONTS}
+\label{sec:typestyle}
 
+To achieve the best rendering both in printed proceedings and electronic proceedings, we
+strongly encourage you to use Times-Roman font. In addition, this will give
+the proceedings a more uniform look. Use a font that is no smaller than nine
+point type throughout the paper, including figure captions.
 
-%2013
+In nine point type font, capital letters are 2 mm high. {\bf If you use the
+smallest point size, there should be no more than 3.2 lines/cm (8 lines/in.)
+vertically.} This is a minimum spacing; 2.75 lines/cm (7 lines/in.) will make
+the paper much more readable. Larger type sizes require correspondingly larger
+vertical spacing. Please do not double-space your paper. TrueType or
+Postscript Type 1 fonts are preferred.
 
-\subsection{Network In Network }
-Inspired by the work of Ian J. Goodfellow et al..\cite{Goodfellow2013} on max out networks,  Min Lin et al. \cite{Lin2013} introduced a micro-network in each convolution layer so that it will compute more abstract features.This network gave a state-of-the-art performance in  ILSVRC 2013 competition with an error rate of 12.95\%.They used NVIDIA TITAN GPU to train the network. Using multilayer perceptron instead of voting to approximate convex functions of each  local patches may result in a good accuracy, but this is equivalent to moving linear separability problem into another hyperspace. So if the input is in high frequency, this will end up modeling  large number of hidden layers and make the network structure more depend on the problem. It will diverge the idea  of the convolution network from  "learn anything" to a "local search".
+The first paragraph in each section should not be indented, but all the
+following paragraphs within the section should be indented as these paragraphs
+demonstrate.
 
-\subsection{Visualizing Convolutional Networks}
+\section{MAJOR HEADINGS}
+\label{sec:majhead}
 
-Matthew D. Zeiler and Rob Fergus\cite{Zeiler2013} presented a method to visualize the function of intermediate feature layers of convolutional networks and used as a diagnostic tool to improve  the model proposed by Krizhevsky et al. \cite{Krizhevsky2012a}. This method helped  them  to understand  the activation in the feature maps with respect to the input patterns. It shows Krizhevsky et al.'s architecture does not have  enough mid frequency coverage in the first layer filters and aliasing artifacts caused by  large stride in the first layer convolutions. Authors solved this problems by decreasing filter size to $7\times7$ and reducing stride to 2.This implementation won the  ILSVRC 2013 competition with an error rate of 11.74\%.Visualizations will help to debug the problem in some extend, But it become nearly impossible when there is large amount parameters involved. These  techniques may  more useful if it can relate to any of the learning formulations instead  vague  approximations of a non-invertible function.
+Major headings, for example, ``1. Introduction'', should appear in all capital
+letters, bold face if possible, centered in the column, with one blank line
+before, and one blank line after. Use a period (``.'') after the heading number,
+not a colon.
 
+\subsection{Subheadings}
+\label{ssec:subhead}
 
-%2014
+Subheadings should appear in lower case (initial word capitalized) in
+boldface. They should start at the left margin on a separate line.
+ 
+\subsubsection{Sub-subheadings}
+\label{sssec:subsubhead}
 
-\subsection{Spatial pyramid pooling in Deep Convolutional Networks}
-Instead of using fixed input size in convolutional networks, Kaiming He et al. \cite{He2014} suggested  the use of a spooling strategy called  spatial pyramid pooling(SPP)\cite{Grauman2005}\cite{1641019} to avoid cropping or warping of  images. It introduced a new layer on top of the convolution layer and perform aggregation  based on Bag-of-Words (BoW) model \cite{Sivic2003}. However, the classical backpropagation training methods expect layers to have a fixed   size.  This problem can be solved  using two fixed size networks with shared parameters and switched the network on alternate epochs. Network was trained using a single GeForce GTX Titan GPU with a starting  learning rate of 0.01 and achieved  a less  error rate of 8.06\% on  ILSVRC 2014 data set. 
-\par 
-This implementation improves the performance of baseline architectures including ZF-5\cite{Zeiler2013} , Convnet \cite{Krizhevsky2012a} and Overfeat-5/7 \cite{Sermanet2013}. Even if  the accuracy of convolutional networks will improve on multi-size training, multi-level pooling, and full-image representations, all this methods will increase both time and space complexity of the system.
+Sub-subheadings, as in this paragraph, are discouraged. However, if you
+must use them, they should appear in lower case (initial word
+capitalized) and start at the left margin on a separate line, with paragraph
+text beginning on the following line.  They should be in italics.
+
+\section{PAPER FORMAT}
+\label{sec:print}
+
+Format you paper for US letter, $8.5 \times 11$-in. paper.
+A4 paper is also acceptable, but please leave the extra 0.5 inch (12 mm)
+empty at the BOTTOM of the page and follow the top and left margins as
+specified. If the last page of your paper is only partially filled, arrange
+the columns so that they are evenly balanced if possible, rather than having
+one long column.
+
+In LaTeX, to start a new column (but not a new page) and help balance the
+last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
+demonstrated on this page (see the LaTeX source below).
+
+\section{PAGE NUMBERING}
+\label{sec:page}
+
+Please do {\bf not} paginate your paper. Page numbers, session numbers, and
+conference identification will be inserted when the paper is included in the
+proceedings.
+
+\section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
+\label{sec:illust}
+
+Illustrations must appear within the designated margins. They may span the two
+columns. If possible, position illustrations at the top of columns, rather
+than in the middle or at the bottom.  Caption and number every illustration.
+All halftone illustrations must be clear black and white prints. Colors may be
+used, but they should be selected so as to be readable when printed on a
+black-only printer.
+
+Since there are many ways, often incompatible, of including images (e.g., with
+experimental results) in a LaTeX document, below is an example of how to do
+this \cite{Lamp86}.
+
+\section{FOOTNOTES}
+\label{sec:foot}
+
+Use footnotes sparingly (or not at all!) and place them at the bottom of the
+column on the page on which they are referenced. Use Times 9-point type,
+single-spaced. To help your readers, avoid using footnotes altogether and
+include necessary peripheral observations in the text (within parentheses, if
+you prefer, as in this sentence).
+
+% Below is an example of how to insert images. Delete the ``\vspace'' line,
+% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
+% with a suitable PostScript file name.
+% -------------------------------------------------------------------------
+\begin{figure}[t]
+
+\begin{minipage}[b]{1.0\linewidth}
+  \centering
+  \centerline{\includegraphics[width=8.5cm]{Figures/image1}}
+%  \vspace{2.0cm}
+  \centerline{(a) Result 1}\medskip
+\end{minipage}
 %
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{Figures/image3}}
+%  \vspace{1.5cm}
+  \centerline{(b) Results 3}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+  \centerline{\includegraphics[width=4.0cm]{Figures/image4}}
+%  \vspace{1.5cm}
+  \centerline{(c) Result 4}\medskip
+\end{minipage}
+%
+\caption{Example of placing a figure with experimental results.}
+\label{fig:res}
+%
+\end{figure}
 
 
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+% -------------------------------------------------------------------------
 
 
-\subsection{Going deeper with convolutions }
-Christian Szegedy and et al. \cite{Szegedy} proposed a network named GoogLeNet with receptive field(input layer) of size $244\times244$ with the number of layers around 100. Network is trained using asynchronous stochastic gradient descent with 0.9 momentum and fixed learning rate schedule based on  no of epochs 
-. Learning procedure took advantage of  model and data-parallelism in a CPU-based cluster environment. This network gave an error rate of  6.67\%  on  ILSVRC 2014 data set. This experiments shows that use of existing dense  blocks to  build the sparse structure can improve the  performance of convolutional networks. Even if higher depth will increase the accuracy , this system will end up with implementing large number of hidden layers to increase accuracy for a high frequency input. 
+\section{COPYRIGHT FORMS}
+\label{sec:copyright}
 
+You must include your fully completed, signed IEEE copyright release form when
+form when you submit your paper. We {\bf must} have this form before your paper
+can be published in the proceedings.
 
-\section{VERY DEEP CONVOLUTIONAL NETWORKS }
-Karen Simonyan and Andrew Zisserman \cite{Arge2015} evaluated the effect of network depth in image classification using very small convolution filters. Their deep network architecture comprise of fixed  size input layers , a stack of convolution layers , three Fully-Connected (FC) layers and  5 max-pooling layers for spatial spooling  over a $2 \times 2$ pixel window with stride 2. Hidden layers are modeled using Rectified Linear Units(ReLU)\cite{Nair2010}. On the hardware side, it uses a multi-GPU system with NVIDIA Titan Black GPUs. Network is trained using multinomial logistic regression  based on backpropagation with momentum of 0.9 and  batch size  256.
-\par
-It has been observed that greater depth with small convolution filters and  initialization of certain layers will cause the learning process to converge in less number  of epochs and also significant improvement in accuracy. This model of the convolution network does not differ from the classical architecture proposed by  LeCun et  al. \cite{LeCun1998}. This implementation results in a significant improvement in accuracy with  an error rate of  6.8\% in  ILSVRC 2014 of ImageNet.
+\section{REFERENCES}
+\label{sec:ref}
 
-\begin{subsection}{Scaling up Image Classification}
-The latest attempt in image classification with an error 5.98\% in ImageNet data set is reported by  Ren Wu et al. \cite{Wu2015} of Baidu research.They developed an end to end deep learning  system named Deep Image. It uses a highly optimized parallel algorithm  to implement large deep neural network with augmented input data. The network is trained using stochastic gradient decent algorithms (SGD on a custom built high performance system comprised of 36 server nodes, each with 2 six-core Intel Xeon E5-2620 processors and 4 NVIDIA Tesla K40m GPUs . System  uses an InfiniBand  network for interconnections. Parallelism strategies used in this network are model-data parallelism and data parallelism.  These methods have been proposed by Alex Krizhevsky \cite{Krizhevsky2014} and Omry Yadan et al. \cite{Yadan2013} for training convolutional neural networks with SGD on a  multiple GPU systems. However, it is not easy extend the same strategies to multiple GPU clusters because of the communication overhead. So the  major objective is to minimize network data transfers and dynamic computation. So it uses butterfly synchronization and lazy update strategies to achieve data parallelism in the gradient computation. This approaches  shows that model-data parallelism is better when number of GPUs is less than 16. Implementation of Data parallelism in a large number  of GPU  cluster is better because of the constant communication requirements.
-\par
-Data augmentation techniques  are used to increase the number of labeled images in the training set. This includes color casting, Vignetting, Lens distortion, Rotation, Flipping, and  Cropping. Instead of using the same resolution on all images. Affine transformations on   the data set may increase the accuracy, But the major problems like occlusion, presence or absence of structural components, lighting conditions doesn't solve by applying simple augmentation techniques on the same data set. 
-\begin{table*}[ht]
- \begin{tabular}{ | p{3cm} | l | p{1.4cm} |p{1.3cm} |p{1cm} |p{1.2cm} |p{1.1cm} |p{6cm}|}
-    \hline
-Team	&Year	&Data Augmentation	&scalable over network	&Time taken	&Hardware	&Error on  ILSVRC & Observations
-\\ 
-\hline
-Ren Wu et al.\cite{Wu2015}	&2015	&aggressive	&Yes	&8.8 hours	&multi-GPU cluster	&5.98\% &Aggressive augmentation  will make the problem depend on data set\\
-\hline
-Karen Simonyan and Andrew Zisserman.\cite{Arge2015}	&2014	&minimum	&No	&3 weeks	&multi-GPU	&6.80\% &Effect of small convolution filter in low frequency domain need to be studied\\
-\hline
-Christian Szegedy and et al.\cite{Szegedy}	&2014	&minimum	&Yes	&more than a week	&CPU cluster	&6.67\% &Inserting more layers will make system depends on the data set \\
-\hline
-Kaiming He et al.\cite{He2014}	&2014	&minimum	&No	&4 weeks	&single GPU	&8.06\% &Good method, But higher time complexity\\
-\hline
-Matthew D. Zeiler and Rob Fergus \cite{Zeiler2013}	&2013	&minimum	&No	&12 days	&single GPU	&11.74\% & Visualizations are not possible in very deep network\\
-\hline
-Min Lin et al.\cite{Lin2013}	&2013	&minimum	&No	&Not reported	&single GPU	&12.95\% &Inserting more layers will over-fit the system \\
-\hline
-Krizhevsky, et al.\cite{Krizhevsky2012a}	&2012	&minimum	&No	&6 days	&multi-GPU	&15.30\% & Effect of rectifier must be studied further\\
-\hline
+List and number all bibliographical references at the end of the
+paper. The references can be numbered in alphabetic order or in
+order of appearance in the document. When referring to them in
+the text, type the corresponding reference number in square
+brackets as shown at the end of this sentence \cite{C2}. An
+additional final page (the fifth page, in most cases) is
+allowed, but must contain only references to the prior
+literature.
 
-\end{tabular}
-\caption[]{ Top 5 error rate in ILSVRC}
-\end{table*}
-\par
- Major contribution of this work is the demonstration of tremendous computational power to achieve high accuracy in image classification.
-It also shows augmented multi-scale images can be combined to achieve less error rate in convolutional network in the context of the image classification. 
- \end{subsection}
- \section {Observations}
- After detailed analysis of the latest literature , we are listing some of the observations.
- \begin{enumerate}
- 
- \item Wisely chosen data  augmentation techniques can increase the performance of the network. But need to be tested with multiple data set.
- \item Data parallelism and model parallelism can increase the speed of the training process. This area can be exploited further to increase the speed of the training process.
- \item Greater depth with small convolution filters will improve the accuracy. But response to different frequency input must be studied .
- \item Network will get benefited from   image  in different scale .
- \item Use of different pooling technique such as spatial pyramid pooling in sub-architectural  level may reduce the error rate. 
- \item  Rectified Linear Units can increase the speed of SGD. 
- 
- 
- \end{enumerate}
- 
- 
-
-\section{conclusion}
-This paper attempts to provide a  review of research on deep convolutional networks  and provide an overview of  its architecture and performance. Majority of the reviewed  works are reported from ImageNet Largqe-Scale Visual Recognition Challenge. There is no work exist to our knowledge, that explain all underpinning mathematics  of  deep convolutional  networks. This networks can only be trained using very expensive computing resources such as multiGPU cluster  to achieve more accuracy on large data sets. So  this research heavily depends on other research domains such as parallel algorithms, computer networks and multicore architecture. Because of the heavy computational requirements, it is not easy to apply this method directly  to the small level computing platforms such as embedded systems and application level  processors. On the other side, this methods can easily bring  live with the help of  cloud computing infrastructure, so to the mobility solutions such as mobile phones and the web.
-
+% References should be produced using the bibtex program from suitable
+% BiBTeX files (here: refs). The IEEEbib.bst bibliography
+% style file from IEEE produces unsorted bibliography list.
+% -------------------------------------------------------------------------
 \bibliographystyle{IEEEbib}
-\bibliography{survey}
+\bibliography{refs}
 
 \end{document}
