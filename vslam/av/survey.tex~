@@ -1,0 +1,131 @@
+\documentclass{article}
+\title{On Autonomous vehicles - Systems and Algorithms}
+\author{Mahesh C\\University of Kerala}
+
+
+\begin{document}
+\maketitle
+\section{Simultaneous Localization And Mapping(SLAM) }
+Estimating the vehicle position and surrounding map  is a necessary condition to achieve autonomous driving. There are multiple sensors like LIDAR, RADAR, Inertial Measurement Unit(IMU), GPS and the stereo Camera are  used to obtain a surrounding map. A navigational map  is obtained by fusing the data from these  sensors.\\
+
+\subsection{Generic Methods}
+Following are the commonly used sensor fusion algorithms used in SLAM.\\
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
+\hline
+Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
+\hline
+Histogram Filters	&SLAM	&High	&Bayes\\
+\hline
+Particle Filters	&SLAM 	&Medium	&Bayesian recursion\\
+\hline
+Extended Kalman filters	&SLAM	&Medium	&Kalman Filters\\
+\hline
+Rao-Blackwellised Filter	&SLAM	&Minimum	&Reduce the sample-space by applying Rao-Blackwellisation (R-B)\\
+\hline
+Bundle adjustment	&Visual SLAM	&High	&predicted projection of points\\
+\hline
+\end{tabular}
+
+\subsection{Visual SLAM(VSLAM)}
+Instead of using high cost sensors such as LIDAR, VSLAM techniques uses camera as the basic sensor.
+Following are the commonly used sensor fusion algorithms used in SLAM.\\
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{4cm}|}
+\hline
+Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
+\hline
+Multi-frame Feature Integration	&Visual Odometry	&High	&Optical flow\\
+\hline
+TLBBA	&Visual Odometry	&High	&Stereo odometry\\
+\hline
+2FO-CC	&Visual Odometry	&High	&Correcting the Calibration Bias\\
+\hline
+VOFSLBA	&Visual Odometry	&High	&flow separation and local bundle adjustment\\
+\hline
+\end{tabular}
+
+
+\section{Motion Planning}
+
+Map obtained from a SLAM algorithm is used to plan the motion of the vehicle through the given GPS waypoints. Some of the algorithms used to  plan the motion of an autonomous vehicle is given below.\\
+
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\hline
+Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
+\hline
+A* 	&Search	&High	& Edsger Dijkstra's 1959 algorithm\\
+\hline
+D*	& Search	&High	& incremental search algorithm\\
+\hline
+Anytime Dynamic A*	&Search	&High	&A*\\
+\hline
+ Probabilistic roadmap	&Search	&High	&Random sampling\\
+\hline
+
+\end{tabular}
+
+\section{Deep Learning network - Object classification}
+Deep learning network is widely used as universal function  mapper  in  majority of the object classification methods.
+It reports the highest accuracy in this problem area.
+Some of the recently reported methods in this area are listed below.
+
+\begin{table*}[ht]
+
+ \begin{tabular}{ | p{2.7cm}  | p{1.4cm} |p{1.1cm} |p{.8cm} |p{2.3cm} |p{1cm}}
+
+    \hline
+\textbf{Team}	&\textbf{Year}&\textbf{Scalable over network}	&\textbf{Time taken}&\textbf{Hardware}&\textbf{Accuracy}
+\\ 
+\hline
+Ren Wu et al. \cite{Wu2015}&2015&Yes&8.8 hours&Multi-GPU Cluster&5.98\%\\
+\hline
+Karen Simonyan et al. \cite{Arge2015}&2014&No&3 weeks&Multi-GPU&6.80\% \\
+\hline
+Christian Szegedy et al. \cite{Szegedy}&2014&Yes&1 week&CPU Cluster&6.67\% \\
+\hline
+Kaiming He et al. \cite{He2014}&2014&No&4 weeks	&Single GPU	&8.06\% \\
+\hline
+Matthew D. Zeiler et al. \cite{Zeiler2013}&2013&No&12 days&Single GPU&11.74\% \\
+\hline
+Min Lin et al. \cite{Lin2013}&2013&No&12 days&Single GPU&12.95\% \\
+\hline
+Krizhevsky, et al.\cite{Krizhevsky2012a}&2012&No&6 days	&Multi-GPU&15.30\%\\
+\hline
+
+\end{tabular}
+\label{table_cp}
+\end{table*}
+
+
+
+
+\section{Object detection, recognition and scene understanding}
+Object recognition algorithms are used to understand the objects/obstacles  around the vehicle. The primary obstacle avoidance methods are based on the point clouds generated from the LIDAR and RADAR data.  But the object recognition methods are more rely on the visual sensors such as camera. Majority of the algorithms uses supervised  machine learning methods to recognize the object. Some of the widely used methods are listed below.\\
+
+\begin{tabular}{|p{3cm}|p{2cm}|p{3cm}|p{3cm}|}
+\hline
+Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
+\hline
+Bayesian Classification 	&Classification	&High	&Bayes\\
+\hline
+Deep Convolution network	&Classification	&High	&neural networks\\
+\hline
+Support Vector Machine	&Classification	&High	&Kernel Tricks\\
+\hline
+
+\end{tabular}
+
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{mfi}Badino, Hernán, Akihiro Yamamoto, and Takeo Kanade. "Visual odometry by multi-frame feature integration." Computer Vision Workshops (ICCVW), 2013 IEEE International Conference on. IEEE, 2013.
+\bibitem{tlbba}Lu, Wei, Zhiyu Xiang, and Jilin Liu. "High-performance visual odometry with two-stage local binocular ba and gpu." Intelligent Vehicles Symposium (IV), 2013 IEEE. IEEE, 2013.
+\bibitem{flow}Kaess, Michael, Kai Ni, and Frank Dellaert. "Flow separation for fast and robust stereo odometry." Robotics and Automation, 2009. ICRA'09. IEEE International Conference on. IEEE, 2009.
+\end{thebibliography}
+
+\end{document}
+
+
