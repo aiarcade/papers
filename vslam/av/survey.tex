@@ -1,6 +1,6 @@
 \documentclass{article}
 \title{On Autonomous vehicles - Systems and Algorithms}
-\author{Mahesh C\\University of Kerala}
+\author{.}
 
 
 \begin{document}
@@ -17,11 +17,11 @@ Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
 \hline
 Histogram Filters	&SLAM	&High	&Bayes\\
 \hline
-Particle Filters	&SLAM 	&Medium	&Bayesian recursion\\
+Particle Filters\cite{pf}	&SLAM 	&Medium	&Bayesian recursion\\
 \hline
-Extended Kalman filters	&SLAM	&Medium	&Kalman Filters\\
+Extended Kalman filters\cite{ekf}	&SLAM	&Medium	&Kalman Filters\\
 \hline
-Rao-Blackwellised Filter	&SLAM	&Minimum	&Reduce the sample-space by applying Rao-Blackwellisation (R-B)\\
+Rao-Blackwellised Filter\cite{rb}	&SLAM	&Minimum	&Reduce the sample-space by applying Rao-Blackwellisation (R-B)\\
 \hline
 Bundle adjustment	&Visual SLAM	&High	&predicted projection of points\\
 \hline
@@ -34,13 +34,13 @@ Following are the commonly used sensor fusion algorithms used in SLAM.\\
 \hline
 Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
 \hline
-Multi-frame Feature Integration	&Visual Odometry	&High	&Optical flow\\
+Multi-frame Feature Integration\cite{mfi}	&Visual Odometry	&High	&Optical flow\\
 \hline
-TLBBA	&Visual Odometry	&High	&Stereo odometry\\
+TLBBA\cite{tlbba}	&Visual Odometry	&High	&Stereo odometry\\
 \hline
 2FO-CC	&Visual Odometry	&High	&Correcting the Calibration Bias\\
 \hline
-VOFSLBA	&Visual Odometry	&High	&flow separation and local bundle adjustment\\
+VOFSLBA	&Visual Odometry\cite{flow}	&High	&flow separation and local bundle adjustment\\
 \hline
 \end{tabular}
 
@@ -54,13 +54,13 @@ Map obtained from a SLAM algorithm is used to plan the motion of the vehicle thr
 \hline
 Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
 \hline
-A* 	&Search	&High	& Edsger Dijkstra's 1959 algorithm\\
+A* \cite{a}	&Search	&High	& Edsger Dijkstra's 1959 algorithm\\
 \hline
-D*	& Search	&High	& incremental search algorithm\\
+D*\cite{d}	& Search	&High	& incremental search algorithm\\
 \hline
-Anytime Dynamic A*	&Search	&High	&A*\\
+Anytime Dynamic A*\cite{aa}	&Search	&High	&A*\\
 \hline
- Probabilistic roadmap	&Search	&High	&Random sampling\\
+ Probabilistic roadmap\cite{p}	&Search	&High	&Random sampling\\
 \hline
 
 \end{tabular}
@@ -76,11 +76,11 @@ Object recognition algorithms are used to understand the objects/obstacles  arou
 \hline
 Algorithm	&Algorithm Type	&Computational Effort	&Theoritical base\\
 \hline
-Bayesian Classification 	&Classification	&High	&Bayes\\
+Bayesian Classification\cite{bc}	&Classification	&High	&Bayes\\
 \hline
-Deep Convolution network	&Classification	&High	&neural networks\\
+Deep Convolutional network\cite{dc}	&Classification	&High	&neural networks\\
 \hline
-Support Vector Machine	&Classification	&High	&Kernel Tricks\\
+Support Vector Machine\cite{svm}	&Classification	&High	&Kernel Tricks\\
 \hline
 
 \end{tabular}
@@ -90,11 +90,23 @@ Support Vector Machine	&Classification	&High	&Kernel Tricks\\
 
 
 \begin{thebibliography}{9}
+\bibitem{ekf}
+Julier, Simon J., and Jeffrey K. Uhlmann. "Unscented filtering and nonlinear estimation." Proceedings of the IEEE 92.3 (2004): 401-422.
+\bibitem{pf}Pitt, Michael K., and Neil Shephard. "Filtering via simulation: Auxiliary particle filters." Journal of the American statistical association 94.446 (1999): 590-599.
+\bibitem{rb}Grisetti, Giorgio, Cyrill Stachniss, and Wolfram Burgard. "Improved techniques for grid mapping with rao-blackwellized particle filters." Robotics, IEEE Transactions on 23.1 (2007): 34-46.
 \bibitem{mfi}Badino, Hernán, Akihiro Yamamoto, and Takeo Kanade. "Visual odometry by multi-frame feature integration." Computer Vision Workshops (ICCVW), 2013 IEEE International Conference on. IEEE, 2013.
 \bibitem{tlbba}Lu, Wei, Zhiyu Xiang, and Jilin Liu. "High-performance visual odometry with two-stage local binocular ba and gpu." Intelligent Vehicles Symposium (IV), 2013 IEEE. IEEE, 2013.
 \bibitem{flow}Kaess, Michael, Kai Ni, and Frank Dellaert. "Flow separation for fast and robust stereo odometry." Robotics and Automation, 2009. ICRA'09. IEEE International Conference on. IEEE, 2009.
-\end{thebibliography}
+\bibitem{a}Delling, Daniel, et al. "Engineering route planning algorithms." Algorithmics of large and complex networks. Springer Berlin Heidelberg, 2009. 117-139.
+\bibitem{d}Stentz, Anthony. "The focussed D\^* algorithm for real-time replanning." IJCAI. Vol. 95. 1995.
 
+\bibitem{p}Boor, Valérie, Mark H. Overmars, and A. Frank van der Stappen. "The Gaussian sampling strategy for probabilistic roadmap planners." Robotics and automation, 1999. proceedings. 1999 ieee international conference on. Vol. 2. IEEE, 1999.
+\bibitem{aa}Likhachev, Maxim, et al. "Anytime Dynamic A*: An Anytime, Replanning Algorithm." ICAPS. 2005.
+\bibitem{bc}Williams, Christopher KI, and David Barber. "Bayesian classification with Gaussian processes." Pattern Analysis and Machine Intelligence, IEEE Transactions on 20.12 (1998): 1342-1351.
+\bibitem{dc}Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
+\bibitem{svm}Suykens, Johan AK, and Joos Vandewalle. "Least squares support vector machine classifiers." Neural processing letters 9.3 (1999): 293-300.
+
+\end{thebibliography}
 \end{document}
 
 
