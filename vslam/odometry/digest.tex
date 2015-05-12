@@ -4,14 +4,23 @@
 \usepackage{amsmath,graphicx}
 \usepackage[font=small,skip=1pt]{caption}
 \usepackage{float}
+\usepackage{authblk}
 \captionsetup[figure]{font=small,skip=1pt}
-\author{\#Authors}
+
 \title{Stereo odometry based on  Local Intensity Order Pattern}
+
+\author[1]{Mahesh C.}
+\author[1]{Aswathy A. L.}
+\author[2]{James Joy}
+\affil[1]{Department of Computer Science, University of Kerala, Kariavattom, Thiruvananthapuram-695581,Kerala, India}
+\affil[2]{Tata Elxsi Limited, Technopark Campus, Kariavattom, Thiruvananthapuram-695581,Kerala, India}
+
+\date{}
 \onehalfspacing
 \begin{document}
 \maketitle
 \begin{abstract}
-New generation autonomous vehicles use different data fusion techniques to solve the Simultaneous Localization And Mapping (SLAM) problems in urban terrains.  However, the majority of the implementations uses high-cost sensors like LIDAR to obtain a high accuracy map. In this paper, we  present a novel method  to solve this problem using sequences of stereo images. Our approach uses Local Intensity Order Pattern (LIOP) based  feature descriptors to  overcome the problem of monotonic intensity changes and affine transformations of detected features. Egomotion of the vehicle is estimated using correspondence of features on the consecutive frames. Estimated motion parameters are then corrected using an extended Kalman filter. Depth of the detected features is calculated using stereo triangulation. Mahalanobis distance  is used to avoid outliers in the detected features.
+New generation autonomous vehicles use different data fusion techniques to solve the Simultaneous Localization And Mapping (SLAM) problems in urban terrains.  However, the majority of the implementations uses high-cost sensors like LIDAR to obtain a high accuracy map. In this paper, we  present a method  to solve this problem using sequences of stereo images. Our approach uses Local Intensity Order Pattern (LIOP) based  feature descriptors to  overcome the problem of monotonic intensity changes and affine transformations of detected features. Ego-motion of the vehicle is estimated using correspondence of features on the consecutive frames. Estimated motion parameters are then corrected using an extended Kalman filter. Depth of the detected features is calculated using stereo triangulation. Mahalanobis distance  is used to avoid outliers in the detected features.
 The accuracy of  the proposed method is  evaluated using the measurements from a  high accurate inertial navigation system. Method is tested using the odometry data set of the KITTI Vision Benchmark Suite.
 			
 \end{abstract}
@@ -36,7 +45,7 @@ Error model in stereo navigation system is proposed by Matthies et al. \cite{mat
 
 \section{System Overview}
 
-The proposed system is similar to the method suggested by Bernd Kitt et al.\cite{Kitt2010IV}. However, to make the system more robust to illumination changes, specular reflection and blur   LIOP \cite{wang2011local} based  feature descriptors are introduced. To Mahalanobis distance-based outlier rejection \cite{Blanco2012} method is are used to calculate optimal correspondence between the feature points. Shortlisted feature points are projected to 3D with the help of triangulation from the camera baseline to obtain the depth. Estimated camera motion parameters are corrected using   the extended Kalman filter. An overview of the system is given in fig \ref{sv}.
+The proposed system is similar to the method suggested by Bernd Kitt et al.\cite{Kitt2010IV}. However, to make the system more robust to illumination changes, specular reflection and blur, LIOP \cite{wang2011local} based feature descriptors are introduced. In the preprocessing stage, image is smoothed by a Gaussian filter and feature position and shape are identified by the Hessian-affine detector\cite{mikolajczyk2002affine}. Mahalanobis distance-based outlier rejection \cite{Blanco2012} method is used to calculate optimal correspondence between the feature points. Shortlisted feature points are projected to 3D with the help of triangulation from the camera baseline to obtain the depth. Estimated camera motion parameters are corrected using   the extended Kalman filter. An overview of the proposed system is given in Figure \ref{sv}.
 \begin{figure}[ht]
  \centering
  \includegraphics[width=10cm]{images/so.eps}
@@ -48,16 +57,16 @@ The proposed system is similar to the method suggested by Bernd Kitt et al.\cite
 The performance of a visual odometry system  depends on extraction and representation of features. To achieve a consistent odometry in adverse weather and lighting conditions, the descriptor must be invariant to photometric transforms such as  specular reflections, complex illumination changes and monotonic intensity changes.
 However, the widely used descriptors such as Scale Invariant Feature Transform(SIFT) and Gradient Location-Orientation Histogram (GLOH) are robust to geometric transformations but sensitive to  photometric transformations.
 \par
-The proposed system uses  Local Intensity Order Pattern(LIOP)\cite{wang2011local} based descriptors to encode  the regions detected by the Hessian-affine covariant region detector. In the preprocessing stage, image is smoothed by a Gaussian filter and feature position and shape are identified by the Hessian-affine detector\cite{mikolajczyk2002affine}. Detected regions are normalized to circular areas of fixed diameter. These local patches are sorted based on the intensity level of the pixels and construct a histogram based on the order. 
+The proposed system uses  Local Intensity Order Pattern(LIOP)\cite{wang2011local} based descriptors to encode  the regions detected by the Hessian-affine covariant region detector. Detected regions are normalized to circular areas of fixed diameter. These local patches are sorted based on the intensity level of the pixels and construct a histogram based on the order. 
 
 \par
-Rotation invariant is achieved by taking neighbourhood pixels of pixel $x$ in the anticlockwise direction on a circle. In order to develop  the histogram, the identified order of intensities in the neighbourhood  of pixels will map to a linear index. Bins are constructed based on the weighted pooling of mapped linear indices  in the region. Extracted features are matched using the fast nearest neighbour matching algorithm. Figure \ref{match} shows randomly selected feature matches .
+Rotation invariant is achieved by considering a circular disk of neighbourhood pixels of pixel $x$ in the anticlockwise direction on a circle. In order to develop  the histogram, the identified order of intensities in the neighbourhood  of pixels will map to a linear index. Bins are constructed based on the weighted pooling of mapped linear indices  in the region. Extracted features are matched using the fast nearest neighbour matching algorithm. Figure \ref{lmatch} shows randomly selected feature matches .
 
 \begin{figure}[ht]
  \centering
- \includegraphics[width=15cm , height=4cm]{images/matchc.eps}
+ \includegraphics[width=12cm , height=2.6cm]{images/matchc.eps}
 \caption{LIOP descriptor matches between  left and right images.}
-\label{match}
+\label{lmatch}
 \end{figure}
 \subsection{Outlier rejection and State Estimation}
 Mahalanobis distance is used to identify the optimal set of the detected feature matches. It is used to calculate the distance between a feature and the overall distribution of the feature correspondence. The Mahalanobis distance \cite{de2000mahalanobis} of an observation $x = ( x_1, x_2, x_3, \dots, x_N )^T$ from a group of observations with mean $\mu = ( \mu_1, \mu_2, \mu_3, \dots , \mu_N )^T$ and covariance matrix $S$ is defined as:
@@ -67,7 +76,7 @@ Mahalanobis distance is used to identify the optimal set of the detected feature
 These features are projected to 3D using the triangular geometry between the image views and camera baseline with help of camera intrinsic parameters. This process is repeated over image frames to measure the motion of the camera. Estimated motion parameter are corrected using an extended Kalman filter.
 
 \section{Results and Observations}
-Proposed method is tested using KITTI vision benchmark suite\cite{Geiger2012CVPR}  and estimated position  and errors for the sequence-01 are given in figure [3-7]. Algorithms are implemented using C++ with help of VLFEAT library in an  i5-3210M, 2.5Ghz CPU.Following are the observations from this empirical method.
+Proposed method is tested using KITTI vision benchmark suite\cite{Geiger2012CVPR}. Figure \ref{rep} and \ref{res} shows the rotation error of the estimated path. Figure \ref{tep} and \ref{tes} shows the translation error of the estimated path. Estimated path and ground truth are compared in Figure \ref{ep}. Algorithms are implemented using C++ with help of VLFeat  library in an  INTEL i5-3210M, 2.5Ghz CPU. Following are the observations from this empirical method.
 
 \begin{itemize}
 \item Use of LIOP based feature descriptors will improve the accuracy of the estimation, but the computational cost is high. 
@@ -75,9 +84,9 @@ Proposed method is tested using KITTI vision benchmark suite\cite{Geiger2012CVPR
 \end{itemize}
 \begin{figure}[ht]
  \centering
- \includegraphics[width=10cm ]{images/01.eps}
+ \includegraphics[width=9cm ]{images/01.eps}
 \caption{Estimated path.}
-\label{match}
+\label{ep}
 \end{figure}
 \begin{figure}[H]
     \centering
@@ -87,14 +96,14 @@ Proposed method is tested using KITTI vision benchmark suite\cite{Geiger2012CVPR
         \includegraphics[width=8cm]{images/01_rl.eps}
         \vspace{-1.5em}
         \caption{Rotation Error  vs Path Length}
-        \label{a}
+        \label{rep}
     \end{minipage}%
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=8cm]{images/01_rs.eps}
          \vspace{-1.5em}
         \caption{Rotation Error  vs Speed}
-        \label{b}
+        \label{res}
     \end{minipage}
     \centering
     \begin{minipage}{.5\textwidth}
@@ -102,14 +111,14 @@ Proposed method is tested using KITTI vision benchmark suite\cite{Geiger2012CVPR
         \includegraphics[width=8cm]{images/01_tl.eps}
          \vspace{-1.5em}
         \caption{Translation Error  vs Path Length}
-        \label{c}
+        \label{tep}
     \end{minipage}%
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=8cm]{images/01_ts.eps}
          \vspace{-1.5em}
         \caption{Translation Error  vs Speed}
-        \label{fd}
+        \label{tes}
     \end{minipage}
 \end{figure}
 \section{conclusion}
