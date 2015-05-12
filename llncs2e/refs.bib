@@ -55,19 +55,6 @@ url = {http://www.nvidia.com/content/tesla/pdf/machine-learning/multi-gpu-traini
 year = {2013}
 }
 
-@article{Krizhevsky2014,
-abstract = {I present a new way to parallelize the training of convolutional neural networks across multiple GPUs. The method scales signiﬁcantly better than all alternatives when applied to modern convolutional neural networks.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1404.5997v2},
-author = {Krizhevsky, Alex},
-eprint = {arXiv:1404.5997v2},
-file = {:home/mahesh/paper/survey/ref/1404.5997v2.pdf:pdf},
-mendeley-groups = {survey\_icip2015},
-pages = {1--7},
-title = {{One weird trick for parallelizing convolutional neural networks}},
-url = {http://arxiv.org/abs/1404.5997},
-year = {2014}
-}
 @article{Berg2010,
 archivePrefix = {arXiv},
 arxivId = {arXiv:1409.0575v2},
@@ -150,34 +137,11 @@ year = {1998}
 }
 
 @article{Szegedy,
-  author    = {Christian Szegedy et al.},
-  title     = {Going Deeper with Convolutions},
-  journal   = {CoRR},
-  volume    = {abs/1409.4842},
-  year      = {2014},
-  url       = {http://arxiv.org/abs/1409.4842},
-  timestamp = {Wed, 01 Oct 2014 15:00:05 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/SzegedyLJSRAEVR14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
+  title={Going deeper with convolutions},
+  author={Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  journal={arXiv preprint arXiv:1409.4842},
+  year={2014}
 }
-
-
-
-@article{Zeiler2013,
-abstract = {Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky $\backslash$etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.},
-archivePrefix = {arXiv},
-arxivId = {1311.2901},
-author = {Zeiler, Matthew D and Fergus, Rob},
-eprint = {1311.2901},
-file = {:data/dev/object\_classifiers/ref/zeilerECCV2014.pdf:pdf},
-journal = {arXiv preprint arXiv:1311.2901},
-mendeley-groups = {survey\_icip2015/2013},
-pages = {818--833},
-title = {{Visualizing and Understanding Convolutional Networks}},
-url = {http://arxiv.org/abs/1311.2901},
-year = {2013}
-}
-
 @article{Krizhevsky2012a,
 abstract = {We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSRVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5\% and 17.0\% which is considerably better than the previous state of the art. The neural network, which has 60 million paramters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolutional operation. To reduce overfitting in the fully-connected layers, we employed a recently-developed method called 'dropout' that proved to be effective. We also entered a variant of the model in the ILSVRC-2012 competition and achievd a top-5 test error rate of 15.3\%, compared to 26.2\% achieved by the second-best entry.},
 archivePrefix = {arXiv},
@@ -248,7 +212,8 @@ volume={2},
 pages={2169-2178}, 
 keywords={Histograms;Image databases;Image recognition;Image representation;Image segmentation;Layout;Object recognition;Robustness;Shape;Spatial databases}, 
 doi={10.1109/CVPR.2006.68}, 
-ISSN={1063-6919},}
+ISSN={1063-6919},
+}
 
 @article{Zeiler2013,
 abstract = {Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we address both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. We also perform an ablation study to discover the performance contribution from different model layers. This enables us to find model architectures that outperform Krizhevsky $\backslash$etal on the ImageNet classification benchmark. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets.},
@@ -1764,7 +1729,7 @@ YEAR = 	 	1993,
 
 
 @inproceedings     { lecun-92a,
-author  =       Y. LeCun et al.",
+author  =       "Y. LeCun et al.",
 title   =       "Handwritten digit recognition with a back-propagation network",
 booktitle=      "Neural Netwotks, current applications",
 year    =       "1992",
@@ -2368,7 +2333,7 @@ year = {1982}
 
 
 @article{deepfwd,
-  author    = {Bogdan Miclut et al.
+  author    = {et al Bogdan Miclut .
               },
   title     = {Committees of deep feedforward networks trained with few data},
   journal   = {CoRR},
@@ -2420,16 +2385,12 @@ ISSN={0018-9472},}
   publisher={Springer}
 }
 @article{imagenet,
-  author    = {Olga Russakovsky 
-               et al.},
-  title     = {ImageNet Large Scale Visual Recognition Challenge},
-  journal   = {CoRR},
-  volume    = {abs/1409.0575},
-  year      = {2014},
-  url       = {http://arxiv.org/abs/1409.0575},
-  timestamp = {Wed, 01 Oct 2014 15:00:04 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/RussakovskyDSKSMHKKBBF14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
+
+  title={Imagenet large scale visual recognition challenge},
+  author={Russakovsky, Olga and Deng, Jia and Su, Hao and Krause, Jonathan and Satheesh, Sanjeev and Ma, Sean and Huang, Zhiheng and Karpathy, Andrej and Khosla, Aditya and Bernstein, Michael and others},
+  journal={arXiv preprint arXiv:1409.0575},
+  year={2014}
+}
 
 
 
